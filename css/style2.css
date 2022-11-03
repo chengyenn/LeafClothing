@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: none;
+    height: 73px;
+    background-color: #83978E;
+}
+
+.navitem {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /*background-color: aqua;*/
+    margin-right: 2%;
+    justify-content: flex-end;
+}
+
+.navlink {
+    color: white;
+    font-size: 16px;
+    margin-right: 5%;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+}
+
+.navlink1 {
+    color: white;
+    font-size: 16px;
+    margin-right: 1.5%;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+}
+
+ul {
+    list-style: none;
+}
+
+.logo {
+    width: 70px;
+    height: 60px;
+    margin-left: 2%;
+}
+
+.car {
+    width: 55px;
+    height: 48px;
+    margin-right: 1%;
+}
+
+.people {
+    width: 55px;
+    height: 48px;
+    margin-right: 2%;
+}
+
+.first {
+    display: flex;
+    flex-direction: row;
+    max-width: none;
+    height: 800px;
+}
+
+.picture {
+    width: 55%;
+    margin-top: 80px;
+    /*background-color: aqua;*/
+}
+
+.clothes {
+    width: 450px;
+    height: 450px;
+    margin-left: 25%;
+}
+
+.intro {
+    width: 45%;
+    margin-top: 80px;
+    font-family: 'Inter', sans-serif;
+    /*background-color: bisque;*/
+}
+
+.intro h1 {
+    margin-top: 0%;
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 30px;
+    line-height: 44px;
+    color: #000000;
+}
+
+.price {
+    font-style: normal;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin-bottom: 15px;
+
+}
+
+.act {
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 25px;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 5px;
+}
+
+.fbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #c3c3c3;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+    margin-top: 20px;
+}
+
+.colorchoose {
+    display: flex;
+    flex-direction: row;
+    /* background-color: chartreuse;*/
+    margin-top: 30px;
+}
+
+.color1 {
+    width: 38px;
+    height: 38px;
+    background: #0E205E;
+    margin-right: 20px;
+}
+
+.color2 {
+    width: 38px;
+    height: 38px;
+    background: #EAE7CD;
+    margin-right: 20px;
+}
+
+.color3 {
+    width: 38px;
+    height: 38px;
+    background: #B5B5B5;
+    margin-right: 20px;
+}
+
+.addcar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 154px;
+    height: 40px;
+    background: #83978E;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.addcar h4 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 390px;
+    height: 50px;
+}
+
+.box h4 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+    color: #000000;
+
+}
+
+.box p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 29px;
+    color: #000000;
+
+}
+
+hr {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 390px;
+    margin-left: 0%;
+}
+
+.foot {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    max-width: none;
+    height: 150px;
+    background-color: #83978E;
+    margin-top: 250px;
+    font-family: 'Inter', sans-serif;
+
+}
+
+.foottext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: auto;
+    margin-left: 32%;
+}
+
+
+.box1 {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.box2 {
+    margin-top: 10px;
+}
+
+.box1 h4 {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.box2 h4 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.footicon {
+    display: flex;
+    flex-direction: row;
+    justify-self: end;
+}
+
+.line {
+    width: 55px;
+    height: 48px;
+}
+
+.ig {
+    width: 55px;
+    height: 45px;
+    margin-left: 20%;
+}
