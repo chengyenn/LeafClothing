@@ -106,8 +106,7 @@ ul {
     font-size: 24px;
     line-height: 29px;
     color: #000000;
-    margin-bottom: 15px;
-
+    margin-bottom: 20px;
 }
 
 .act {
@@ -116,7 +115,15 @@ ul {
     font-size: 16px;
     line-height: 25px;
     color: rgba(0, 0, 0, 0.8);
-    margin-bottom: 5px;
+}
+
+.famount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 390px;
+    margin-top: 20px;
 }
 
 .fbtn {
@@ -131,7 +138,14 @@ ul {
     font-size: 22px;
     line-height: 27px;
     color: #000000;
-    margin-top: 20px;
+}
+
+.amount {
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    color: #000000;
+
 }
 
 .colorchoose {
@@ -234,7 +248,7 @@ hr {
     align-items: center;
     height: 150px;
     width: auto;
-    margin-left: 32%;
+    margin-left: 30%;
 }
 
 
