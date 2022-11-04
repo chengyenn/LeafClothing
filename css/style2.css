@@ -17,7 +17,6 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    /*background-color: aqua;*/
     margin-right: 2%;
     justify-content: flex-end;
 }
@@ -72,22 +71,25 @@ ul {
 }
 
 .picture {
-    width: 55%;
+    width: 50%;
     margin-top: 80px;
-    /*background-color: aqua;*/
 }
 
 .clothes {
-    width: 450px;
-    height: 450px;
-    margin-left: 25%;
+    width: 380px;
+    height: 380px;
+    margin-left: 35%;
 }
 
 .intro {
-    width: 45%;
+    width: 50%;
     margin-top: 80px;
     font-family: 'Inter', sans-serif;
-    /*background-color: bisque;*/
+}
+
+.innerbox {
+    margin-left: 10%;
+    width: fit-content;
 }
 
 .intro h1 {
@@ -137,21 +139,20 @@ ul {
     font-weight: 100;
     font-size: 22px;
     line-height: 27px;
-    color: #000000;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 .amount {
     font-style: normal;
     font-weight: 100;
     font-size: 18px;
-    color: #000000;
-
+    color: rgba(0, 0, 0, 0.7);
+    letter-spacing: 5px;
 }
 
 .colorchoose {
     display: flex;
     flex-direction: row;
-    /* background-color: chartreuse;*/
     margin-top: 30px;
 }
 
@@ -218,8 +219,7 @@ ul {
     font-weight: 500;
     font-size: 16px;
     line-height: 29px;
-    color: #000000;
-
+    color: rgba(0, 0, 0, 0.7);
 }
 
 hr {
