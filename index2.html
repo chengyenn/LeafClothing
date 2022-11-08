@@ -5,82 +5,350 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Leaf2629 Cat-house</title>
     <link rel="stylesheet" href="css/style2.css">
+    <link rel="icon" href="img/圓.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/1a52dd44d7.js" crossorigin="anonymous"></script>
 </head>
 <header>
-    <div class="navbar">
-        <img src="img/logo.png" class="logo">
-        <ul class="navitem">
-            <li class="navlink">特價商品</li>
-            <li class="navlink">熱賣商品</li>
-            <li class="navlink1">所有商品</li>
+    <nav class="navBar">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" class="leafLogo"></a>
+        </div>
+        <ul class="navItem">
+            <li class="navLink">
+                <a class=nava href="#">特價商品</a>
+            </li>
+            <li class="navLink">
+                <a class=nava href="#">熱賣商品</a>
+            </li>
+            <li class="navLink1">
+                <a class=nava href="#">所有商品</a>
+            </li>
         </ul>
-        <img src="img/car.png" class="car">
-        <img src="img/people.png" class="people">
-    </div>
+        <div class="car">
+            <a href=""><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+        </div>
+        <div class="member">
+            <a href="index3.html"><i class="fa-solid fa-circle-user fa-lg"></i></a>
+        </div>
+    </nav>
 </header>
 
 <body>
     <div class="first">
         <div class="picture">
-            <img src="img/圖片 1.png" class="clothes">
+            <img src="img/圖1.png" class="clothes" id="clothes">
+            <img src="img/圖1藍.png" class="clothes" id="clothesBlue">
+            <img src="img/圖1米.png" class="clothes" id="clothesCream">
         </div>
         <div class="intro">
             <div class="innerbox">
-                <h1>一起去跑步的朋朋＿坦克背心</h1>
-                <p class="price">NT$790</p>
-                <p class="act">・ 單件9折/兩件85折/三件7折</p>
-                <p class="act">・ 滿＄1500免運</p>
-                <p class="act">・ 分享活動現折＄50</p>
+                <p class="title">一起去跑步的朋朋＿坦克背心</p>
+                <p class="price">NT$ 790</p>
+                <ul class="promotion">
+                    <li class="act">・單件9折/兩件85折/三件7折</li>
+                    <li class="act">・滿＄1500免運</li>
+                    <li class="act">・分享活動現折＄50</li>
+                </ul>
                 <div class="famount">
-                    <div class="fbtn">F</div>
-                    <div class="amount">- 1 +</div>
+                    <button class="famountButton famountp">F</button>
+                    <div class="quantity">
+                        <button class="quantityButton quantity_minus"><i class="fa-sharp fa-solid fa-minus "></i></button>
+                        <input class="quantity_number" type="text" value="1">
+                        <button class="quantityButton quantity_plus"><i class="fa-sharp fa-solid fa-plus "></i></button>
+                    </div>
                 </div>
-                <div class="colorchoose">
-                    <div class="color1"></div>
-                    <div class="color2"></div>
-                    <div class="color3"></div>
+                <div class="colorChoose">
+                    <button class="colorButton" id="colorButton1"><div class="color1"></div></button>
+                    <button class="colorButton" id="colorButton2"><div class="color2"></div></button>
+                    <button class="colorButton" id="colorButton3"><div class="color3"></div></button>
                 </div>
-                <div class="addcar">
-                    <h4>加入購物車</h4>
-                </div>
+                    <button class="addcar">加入購物車</button>
                 <div class="box">
-                    <h4>產品介紹</h4>
-                    <p>+</p>
+                    <p class="boxp">產品介紹</p>
+                    <button class="boxButton" id="productMore">+</button>
                 </div>
                 <hr>
                 <div class="box">
-                    <h4>尺寸表</h4>
-                    <p>+</p>
+                    <p class="boxp">尺寸表</p>
+                    <button class="boxButton" id="sizeMore">+</button>
                 </div>
                 <hr>
                 <div class="box">
-                    <h4>試穿指南</h4>
-                    <p>+</p>
+                    <p class="boxp">試穿指南</p>
+                    <button class="boxButton" id="sizeguideMore">+</button>
                 </div>
                 <hr>
             </div>
         </div>
+        <div class="card_product_page"> <!--遮罩-->
+            <div class="card_product">  <!--產品介紹-->
+                <i class="fa-solid fa-square-xmark productCross"></i>
+                <div class="cardText">
+                    <div class="material">
+                        <p class="cardTitle">材質</p>
+                        <hr class="cardhr">
+                        <ul>
+                            <li class="cardli">・棉 70%</li>
+                            <li class="cardli">・亞麻 30%</li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <p class="cardTitle">商品介紹</p>
+                        <hr class="cardhr">
+                        <ul>
+                            <li class="cardli">・Made In Korea</li>
+                        </ul>
+                        <p class="descriptionp">沒有挖太多的坦克背心，害羞且遲遲不敢嘗試背心穿搭的，這款可以放入購物車囉！<br>激推與尼龍褲包套，外面搭個氣泡水襯衫，隨便時髦。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card_size">  <!--尺寸表-->
+                <i class="fa-solid fa-square-xmark sizeCross"></i>
+                <div class="cardText">
+                    <div class="size">
+                        <p class="cardTitle">尺寸表</p>
+                        <hr class="cardhr">
+                        <table>
+                            <tr>
+                                <td class="sizeTitle">尺寸</td>
+                                <td class="sizeTitle">肩寬</td>
+                                <td class="sizeTitle">胸寬</td>
+                                <td class="sizeTitle">腰寬</td>
+                                <td class="sizeTitle">全長</td>
+                            </tr>
+                        </table>
+                        <hr class="sizehr">
+                        <table>
+                            <tr>
+                                <td class="sizeContent">&nbsp;F&nbsp;</td>
+                                <td class="sizeContent">28cm</td>
+                                <td class="sizeContent">33cm</td>
+                                <td class="sizeContent">30cm</td>
+                                <td class="sizeContent">45cm</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="card_sizeguide">  <!--試穿指南-->
+                <i class="fa-solid fa-square-xmark sizeguideCross"></i>
+                <div class="cardText">
+                    <div class="sizeguide">
+                        <p class="cardTitle">試穿指南</p>
+                        <hr class="cardhr">
+                        <table>
+                            <tr>
+                                <td class="sizeguideTitle">小編資訊<br>(Female)</td>
+                                <td class="sizeguideTitle">身高</td>
+                                <td class="sizeguideTitle">體重</td>
+                                <td class="sizeguideTitle">肩寬</td>
+                                <td class="sizeguideTitle">胸圍</td>
+                                <td class="sizeguideTitle">身形特點</td>
+                                <td class="sizeguideTitle">尺寸</td>
+                                <td class="sizeguideTitle">穿著感</td>
+                            </tr>
+                        </table>
+                        <hr class="sizeguidehr">
+                        <table>
+                            <tr>
+                                <td class="sizeguideContent">A</td>
+                                <td class="sizeguideContent">156cm</td>
+                                <td class="sizeguideContent">43kg</td>
+                                <td class="sizeguideContent">36cm</td>
+                                <td class="sizeguideContent">79cm</td>
+                                <td class="sizeguideContent">有小腹</td>
+                                <td class="sizeguideContent">F</td>
+                                <td class="sizeguideContent">寬鬆</td>
+                            </tr>
+                            <tr>
+                                <td class="sizeguideContent">B</td>
+                                <td class="sizeguideContent">160cm</td>
+                                <td class="sizeguideContent">48kg</td>
+                                <td class="sizeguideContent">38cm</td>
+                                <td class="sizeguideContent">82cm</td>
+                                <td class="sizeguideContent">肩膀偏寬</td>
+                                <td class="sizeguideContent">F</td>
+                                <td class="sizeguideContent">舒適</td>
+                            </tr>
+                            <tr>
+                                <td class="sizeguideContent">C</td>
+                                <td class="sizeguideContent">165cm</td>
+                                <td class="sizeguideContent">52kg</td>
+                                <td class="sizeguideContent">38cm</td>
+                                <td class="sizeguideContent">87cm</td>
+                                <td class="sizeguideContent">扁身</td>
+                                <td class="sizeguideContent">F</td>
+                                <td class="sizeguideContent">舒適</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>  
     </div>
-</body>
-<footer>
-    <div class="foot">
-        <div class="foottext">
-            <div class="box1">
-                <h4>最新消息</h4>
-                <h4>常見問題</h4>
-                <h4>聯絡我們</h4>
+    <footer>
+        <div class="footer">
+            <div class="footerText">
+                <ul class="box1">
+                    <li class="footerLink">
+                        <a class=footera href="">最新消息</a>
+                    </li>
+                    <li class="footerLink">
+                        <a class=footera href="">常見問題</a>
+                    </li>
+                    <li class="footerLink">
+                        <a class=footera href="">聯絡我們</a>
+                    </li>
+                </ul>
+                <div class="box2">
+                    <p class=footerp>Copyright © Leaf2629 Cat-house</p>
+                </div>
             </div>
-            <div class="box2">
-                <h4>Copyright © Leaf2629 Cat-house</h4>
+            <div class="footerIcon">
+                <a class=icona href=""><i class="fa-brands fa-line fa-2x"></i></a>
+                <a class=icona href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
             </div>
         </div>
-        <div class="footicon">
-            <img src="img/line.png" class="line">
-            <img src="img/ig.png" class="ig">
-        </div>
-    </div>
-</footer>
+    </footer>
 
+<!-- script -->
+
+<!--載入jQuery-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--載入jQuery UI 1.11.4-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+
+        $(".card_product_page").hide();
+        $(".card_product").hide();
+        $(".card_size").hide();
+        $(".card_sizeguide").hide();
+        $("#clothesBlue").hide();
+        $("#clothesCream").hide();
+
+        // 尺寸選擇CSS變化
+        $(".famountButton").click(function(){
+            $(".famountButton").css("background-color","transparent");
+            $(".famountButton").css("border-color","#48685A");
+        })
+
+        // 數量減少
+        $(".quantity_minus").click(function(){
+            quantityMinus();
+        })
+
+        function quantityMinus() {
+            let inputNum = $(".quantity_number").val();
+            if(inputNum > 1) {
+                $(".quantity_number").val(--inputNum);
+            }
+            if(inputNum <= 1) {
+                $(".quantity_number").val("1");
+            }
+        }
+
+        // 數量增加
+        $(".quantity_plus").click(function(){
+            quantityPlus();
+        })
+
+        function quantityPlus() {
+            let inputNum = $(".quantity_number").val();
+            $(".quantity_number").val(++inputNum);
+        }
+
+        // 顏色選擇CSS變化
+        $("#colorButton1").click(function(){
+            $("#colorButton1").css("border-color","#48685A");
+            $("#colorButton1").css("background-color","transparent");
+            $("#colorButton2").css("border-color","#ced4da");
+            $("#colorButton3").css("border-color","#ced4da");
+            $("#clothesBlue").show();
+            $("#clothes").hide();
+            $("#clothesCream").hide();
+        })
+
+        $("#colorButton2").click(function(){
+            $("#colorButton2").css("border-color","#48685A");
+            $("#colorButton2").css("background-color","transparent");
+            $("#colorButton1").css("border-color","#ced4da");
+            $("#colorButton3").css("border-color","#ced4da");
+            $("#clothesCream").show();
+            $("#clothesBlue").hide();
+            $("#clothes").hide();
+        })
+
+        $("#colorButton3").click(function(){
+            $("#colorButton3").css("border-color","#48685A");
+            $("#colorButton3").css("background-color","transparent");
+            $("#colorButton1").css("border-color","#ced4da");
+            $("#colorButton2").css("border-color","#ced4da");
+            $("#clothes").show();
+            $("#clothesCream").hide();
+            $("#clothesBlue").hide();
+        })
+
+        // 加入購物車CSS變化
+        $(".addcar").click(function(){
+            $(".addcar").css("background-color","#83978E");
+        })
+
+        $(".addcar").mouseenter(function(){
+            $(".addcar").css("background-color","#48685A");
+            $(".addcar").css("cursor","pointer");
+        })
+
+        $(".addcar").mouseleave(function(){
+            $(".addcar").css("background-color","#83978E");
+        })
+
+        // 產品介紹展開與收合
+        $("#productMore").click(function(){
+            $(".card_product_page").toggle();
+            $(".card_product_page").css({"background-color": "#D9D9D9"});
+            $(".card_product").toggle();
+        })
+
+        $(".productCross").click(function(){
+            $(".card_product_page").css({"background-color": "transparent"});
+            $(".card_product_page").toggle();
+            $(".card_product").toggle();
+        })
+        
+        // 尺寸表展開與收合
+        $("#sizeMore").click(function(){
+            $(".card_product_page").toggle();
+            $(".card_product_page").css({"background-color": "#D9D9D9"});
+            $(".card_size").toggle();
+        })
+
+        $(".sizeCross").click(function(){
+            $(".card_product_page").css({"background-color": "transparent"});
+            $(".card_product_page").toggle();
+            $(".card_size").toggle();
+        })
+
+        // 試穿指南開與收合
+        $("#sizeguideMore").click(function(){
+            $(".card_product_page").toggle();
+            $(".card_product_page").css({"background-color": "#D9D9D9"});
+            $(".card_sizeguide").toggle();
+        })
+
+        $(".sizeguideCross").click(function(){
+            $(".card_product_page").css({"background-color": "transparent"});
+            $(".card_product_page").toggle();
+            $(".card_sizeguide").toggle();
+        })
+    })
+    
+</script>
+
+</body>
 </html>
