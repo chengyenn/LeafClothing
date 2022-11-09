@@ -167,7 +167,6 @@ ul {
 .famountButton{
     width: 30px;
     height: 30px;
-    background-color: #c3c3c3;
     background-color: transparent;
     border: 1.5px solid #ced4da;
     transition: .2s;
@@ -371,7 +370,6 @@ hr {
     z-index: 9;
     width: 100%;
     height: 900px;
-    background-color:#0E205E;
     display: flex;
     justify-content: center;
     align-items: center;
