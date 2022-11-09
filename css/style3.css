@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* nav */
 .navBar {
     display: flex;
     flex-direction: row;
@@ -27,12 +26,12 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    /*background-color: aqua;*/
-    /* margin-right: 2%; */
     justify-content: flex-end;
+    margin: 0;
+    padding: 0;
 }
 
-.navLink, .navLink1 {
+.navLink {
     margin-right: 4%;
 }
 
@@ -40,7 +39,21 @@
     margin-right: 2%;
 }
 
-.nava {
+.navLink2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4%;
+    border-bottom: 1px solid #90a29a;
+    width: 150px;
+    height: 45px;
+}
+.navLinkblank{
+    width: 150px;
+    height: 20px;
+} 
+
+.nava, .nava1{
     color: #FFFFFF;
     text-decoration: none;
     font-size: 16px;
@@ -50,15 +63,37 @@
     line-height: 19px;
 }
 
+.nav-sublist {
+    position: absolute;
+    background-color: #83978E;
+    padding: 0;
+    width: 150px;
+    display: none;
+    right: 140px;
+}
+
+.navLink1:hover .nav-sublist {
+    display: block;
+}
+.navLink1:hover .nava {
+    background-color: #83978E;
+} 
+
+.nav-sublist .navLink2:hover .nava, .nava:hover, .nava1:hover{
+    color: #2D4263;
+}
+
+
 ul {
     list-style: none;
 }
+
 
 .car {
     margin: 0 1.5% 0 2%;
 }
 
-.member{
+.member {
     margin: 0 3% 0 1.5%;
 }
 
@@ -167,8 +202,7 @@ ul {
     max-width: none;
     height: 150px;
     background-color: #83978E;
-    /* margin-top: 80px; */
-    margin-bottom: -150px;
+    margin-top: 100px;
     font-family: 'Inter', sans-serif;
 
 }
@@ -193,7 +227,7 @@ ul {
     margin-top: 10px;
 }
 
-.footerLink{
+.footerLink {
     margin: 0 10px;
 }
 
@@ -205,6 +239,10 @@ ul {
     text-decoration: none;
 }
 
+.footera:hover{
+    color: #2D4263;
+}
+
 .footerIcon {
     display: flex;
     flex-direction: row;
@@ -212,10 +250,10 @@ ul {
     align-items: center;
 }
 
-.icona{
+.icona {
     margin: 0 35%;
 }
 
-.fa-instagram, .fa-line, .fa-cart-shopping, .fa-circle-user{
+.fa-instagram, .fa-line, .fa-cart-shopping, .fa-circle-user {
     color: white;
 }

@@ -32,8 +32,7 @@
     padding: 0;
 }
 
-.navLink,
-.navLink1 {
+.navLink {
     margin-right: 4%;
 }
 
@@ -47,15 +46,15 @@
     align-items: center;
     margin-right: 4%;
     border-bottom: 1px solid #90a29a;
-    width: 65px;
-    height: 40px;
+    width: 150px;
+    height: 45px;
 }
 .navLinkblank{
-    width: 65px;
-    height: 21px;
-}
+    width: 150px;
+    height: 20px;
+} 
 
-.nava {
+.nava, .nava1{
     color: #FFFFFF;
     text-decoration: none;
     font-size: 16px;
@@ -69,8 +68,9 @@
     position: absolute;
     background-color: #83978E;
     padding: 0;
-    width: 65px;
+    width: 150px;
     display: none;
+    right: 140px;
 }
 
 .navLink1:hover .nav-sublist {
@@ -80,8 +80,8 @@
     background-color: #83978E;
 } 
 
-.nav-sublist .navLink2:hover .nava {
-    color: black;
+.nav-sublist .navLink2:hover .nava, .nava:hover, .nava1:hover{
+    color: #2D4263;
 }
 
 
@@ -193,13 +193,16 @@ ul {
     margin: 0 10px;
 }
 
-.footera,
-.footerp {
+.footera, .footerp {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     color: #FFFFFF;
     text-decoration: none;
+}
+
+.footera:hover{
+    color: #2D4263;
 }
 
 .footerIcon {
@@ -213,9 +216,6 @@ ul {
     margin: 0 35%;
 }
 
-.fa-instagram,
-.fa-line,
-.fa-cart-shopping,
-.fa-circle-user {
+.fa-instagram, .fa-line, .fa-cart-shopping, .fa-circle-user {
     color: white;
 }
