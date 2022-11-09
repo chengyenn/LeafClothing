@@ -42,7 +42,18 @@
                 <p class="titlep">會員登入</p>
             </div>
             <div class="email">
-                <input type="text" class="emailinput">
+                <input type="email" class="emailinput" placeholder="電子郵件">
+            </div>
+            <div class="password">
+                <input type="password" class="passwordinput" placeholder="密碼">
+            </div>
+            <div class="login">
+                <button class="loginButton loginText">登入</button>
+            </div>
+            <div class="additional">
+                <a href="" class="additionala">註冊帳戶</a>
+                <span class="additional_dot">•</span>
+                <a href="" class="additionala">忘記密碼 ?</a>
             </div>
         </div>
     </div>
@@ -70,5 +81,53 @@
             </div>
         </div>
     </footer>
+
+<!-- script -->
+
+<!--載入jQuery-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--載入jQuery UI 1.11.4-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+
+        // email輸入框點擊後樣式
+        $(".emailinput").click(function() {
+            $(".emailinput").css("border-color","#48685A");
+        })
+
+        $(".emailinput").blur(function() {
+            $(".emailinput").css("border-color","#ced4da");
+        })
+
+         // passward輸入框點擊後樣式
+        $(".passwordinput").click(function() {
+            $(".passwordinput").css("border-color","#48685A");
+        })
+        
+        $(".passwordinput").blur(function() {
+            $(".passwordinput").css("border-color","#ced4da");
+        })
+
+        // 登入CSS變化
+        $(".loginButton").click(function() {
+            $(".loginButton").css("background-color","#83978E");
+        })
+
+        $(".loginButton").mouseenter(function() {
+            $(".loginButton").css("background-color","#48685A");
+            $(".loginButton").css("cursor","pointer");
+        })
+
+        $(".loginButton").mouseleave(function() {
+            $(".loginButton").css("background-color","#83978E");
+        })
+
+
+    })
+    
+</script>
 </body>
 </html>
