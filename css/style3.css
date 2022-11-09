@@ -64,19 +64,22 @@ ul {
 
 /* body */
 .userLogin_page {
-    height: 600px;
+    /* height: 500px; */
     width: 100%;
-    padding-top: 64px;
+    padding-top: 120px;
     display: flex;
     justify-content: center;
+    height: 100%;
 }
 
 .card_login {
     width: 50%;
-    background-color: bisque;
+    /* background-color: bisque; */
     display: flex;
     flex-direction: column; 
     align-items: center;
+    justify-content: center;
+    padding-bottom: 150px;
 }
 
 .titlep {
@@ -86,13 +89,73 @@ ul {
     font-size: 32px;
     line-height: 44px;
     color: #597066;
-    margin: 20% 0; 
+    margin: 20px 0 20px 0; 
 }
 
-.emailinput {
-    border: 1px solid #ced4da;
-    width:0;
-    height: 100%;
+.email, .password, .login {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.emailinput, .passwordinput, .loginButton {
+    width:75%;
+    height: 40px;
+    padding: 10px;
+    outline: none;  /* 不要有藍框*/
+    border: 1px solid #ced4da ;
+}
+
+.loginButton {
+    background-color: #83978E;
+    border: none;
+    transition: .1s;
+    height: 45px;
+}
+
+.loginText {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+}
+
+.loginButton:active {
+    transform: scale(1);
+    box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    border: 2px solid;
+    border-top: #000000;
+    border-left: #000000;
+} 
+
+.additional {
+    width: 75%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0; 
+}
+
+.additionala {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.7)
+}
+
+.additionala:hover {
+    color: #597066;
+}
+
+.additional_dot {
+    opacity: 0.3;
+    padding: 0 10px;
+    font-size: 14px;
 }
 
 /* footer */
@@ -104,7 +167,8 @@ ul {
     max-width: none;
     height: 150px;
     background-color: #83978E;
-    margin-top: 64px;
+    /* margin-top: 80px; */
+    margin-bottom: -150px;
     font-family: 'Inter', sans-serif;
 
 }

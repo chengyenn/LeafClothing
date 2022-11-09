@@ -233,13 +233,12 @@
         $("#clothesCream").hide();
 
         // 尺寸選擇CSS變化
-        $(".famountButton").click(function(){
-            $(".famountButton").css("background-color","transparent");
+        $(".famountButton").click(function() {
             $(".famountButton").css("border-color","#48685A");
         })
 
         // 數量減少
-        $(".quantity_minus").click(function(){
+        $(".quantity_minus").click(function() {
             quantityMinus();
         })
 
@@ -254,7 +253,7 @@
         }
 
         // 數量增加
-        $(".quantity_plus").click(function(){
+        $(".quantity_plus").click(function() {
             quantityPlus();
         })
 
@@ -264,9 +263,8 @@
         }
 
         // 顏色選擇CSS變化
-        $("#colorButton1").click(function(){
+        $("#colorButton1").click(function() {
             $("#colorButton1").css("border-color","#48685A");
-            $("#colorButton1").css("background-color","transparent");
             $("#colorButton2").css("border-color","#ced4da");
             $("#colorButton3").css("border-color","#ced4da");
             $("#clothesBlue").show();
@@ -274,9 +272,8 @@
             $("#clothesCream").hide();
         })
 
-        $("#colorButton2").click(function(){
+        $("#colorButton2").click(function() {
             $("#colorButton2").css("border-color","#48685A");
-            $("#colorButton2").css("background-color","transparent");
             $("#colorButton1").css("border-color","#ced4da");
             $("#colorButton3").css("border-color","#ced4da");
             $("#clothesCream").show();
@@ -284,9 +281,8 @@
             $("#clothes").hide();
         })
 
-        $("#colorButton3").click(function(){
+        $("#colorButton3").click(function() {
             $("#colorButton3").css("border-color","#48685A");
-            $("#colorButton3").css("background-color","transparent");
             $("#colorButton1").css("border-color","#ced4da");
             $("#colorButton2").css("border-color","#ced4da");
             $("#clothes").show();
@@ -295,53 +291,53 @@
         })
 
         // 加入購物車CSS變化
-        $(".addcar").click(function(){
+        $(".addcar").click(function() {
             $(".addcar").css("background-color","#83978E");
         })
 
-        $(".addcar").mouseenter(function(){
+        $(".addcar").mouseenter(function() {
             $(".addcar").css("background-color","#48685A");
             $(".addcar").css("cursor","pointer");
         })
 
-        $(".addcar").mouseleave(function(){
+        $(".addcar").mouseleave(function() {
             $(".addcar").css("background-color","#83978E");
         })
 
         // 產品介紹展開與收合
-        $("#productMore").click(function(){
+        $("#productMore").click(function() {
             $(".card_product_page").toggle();
-            $(".card_product_page").css({"background-color": "#D9D9D9"});
+            $(".card_product_page").css({"background-color": "rgba(0, 0, 0, 0.3);"});
             $(".card_product").toggle();
         })
 
-        $(".productCross").click(function(){
+        $(".productCross").click(function() {
             $(".card_product_page").css({"background-color": "transparent"});
             $(".card_product_page").toggle();
             $(".card_product").toggle();
         })
         
         // 尺寸表展開與收合
-        $("#sizeMore").click(function(){
+        $("#sizeMore").click(function() {
             $(".card_product_page").toggle();
-            $(".card_product_page").css({"background-color": "#D9D9D9"});
+            $(".card_product_page").css({"background-color": "rgba(0, 0, 0, 0.3);"});
             $(".card_size").toggle();
         })
 
-        $(".sizeCross").click(function(){
+        $(".sizeCross").click(function() {
             $(".card_product_page").css({"background-color": "transparent"});
             $(".card_product_page").toggle();
             $(".card_size").toggle();
         })
 
         // 試穿指南開與收合
-        $("#sizeguideMore").click(function(){
+        $("#sizeguideMore").click(function() {
             $(".card_product_page").toggle();
-            $(".card_product_page").css({"background-color": "#D9D9D9"});
+            $(".card_product_page").css({"background-color": "rgba(0, 0, 0, 0.3);"});
             $(".card_sizeguide").toggle();
         })
 
-        $(".sizeguideCross").click(function(){
+        $(".sizeguideCross").click(function() {
             $(".card_product_page").css({"background-color": "transparent"});
             $(".card_product_page").toggle();
             $(".card_sizeguide").toggle();
