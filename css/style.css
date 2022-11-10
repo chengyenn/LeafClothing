@@ -99,8 +99,9 @@ ul {
 }
 
 /* body */
-.first {
-    max-width: none;
+.coverphoto {
+    width: 100%;
+    height: auto;
 }
 
 .titlep {
