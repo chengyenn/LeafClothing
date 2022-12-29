@@ -48,38 +48,39 @@
     </div>
     <div class="contentArea">
         <ul class="gallery row">
-            <li class="gallery_item col">
+            <li class="gallery_item col" data-title="一起去跑步的朋朋＿坦克背心">
                 <a href="index2.html" class="gallery_item-link">
                     <img class="gallery_item-image" src="img/圖片 1.png">
                 </a>
             </li>
-            <li class="gallery_item col">
+            <li class="gallery_item col" data-title="熊一家人＿棉T">
                 <a href="#" class="gallery_item-link">
                     <img class="gallery_item-image" src="img/圖片 2.png">
                 </a>
             </li>
-            <li class="gallery_item col">
+            <li class="gallery_item col" data-title="垂墜西裝褲">
                 <a href="#" class="gallery_item-link">
                     <img class="gallery_item-image" src="img/圖片 3.png">
                 </a>
             </li>
-            <li class="gallery_item1 col">
+            <li class="gallery_item1 col" data-title="春暖花開＿針織衫">
                 <a href="#" class="gallery_item-link">
                     <img class="gallery_item-image" src="img/圖片 4.png">
                 </a>
             </li>
-            <li class="gallery_item1 col">
+            <li class="gallery_item1 col" data-title="慵懶午後＿棉麻感長洋">
                 <a href="#" class="gallery_item-link">
                     <img class="gallery_item-image" src="img/圖片 5.png">
                 </a>
             </li>
-            <li class="gallery_item1 col">
+            <li class="gallery_item1 col" data-title="穿了才知道你的好＿純棉圓領T">
                 <a href="#" class="gallery_item-link">
                     <img class="gallery_item-image" src="img/圖片 6.png">
                 </a>
             </li>
         </ul>
     </div>
+
     <footer>
         <div class="footer">
             <div class="footerText">
@@ -104,6 +105,46 @@
             </div>
         </div>
     </footer>
+
+    <!-- script -->
+
+    <!--載入jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--載入jQuery UI 1.11.4-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('.gallery_item-link').mouseenter(function () {
+                // Get data attribute values
+                var title = $(this).parent('li').data('title');
+                if (!$(this).children("div").length) {
+                    $(this).append('<div class="overlay"></div>');
+                }
+
+                // Get the overlay div
+                var overlay = $(this).children('.overlay');
+
+                // Add html to overlay
+                overlay.html('<h3>' + title + '</h3>');
+
+                // Fade in overlay
+                overlay.fadeIn(800);
+            });
+
+            // Mouseleave Overlay Effect
+            $('.gallery_item-link').mouseleave(function () {
+                // Get the overlay div
+                var overlay = $(this).children('.overlay');
+
+                // Fade out overlay
+                overlay.fadeOut(500);
+            });
+
+
+        });
+    </script>
 </body>
 
 </html>
