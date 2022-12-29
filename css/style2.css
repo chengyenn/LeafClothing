@@ -463,3 +463,30 @@ table {
 .sizeguideContent {
     line-height: 30px;
 }
+
+/* Grid Style */
+
+@media screen and (max-width: 768px) {
+
+    .icona {
+        margin: 0 25%;
+    }
+
+    .navLink {
+        margin-right: 6%;
+    }
+    
+    .navLink1 {
+        margin-right: 4%;
+    }
+
+    .car {
+        margin: 0 3% 0 2%;
+    }
+    
+    .member {
+        margin: 0 4% 0 1.5%;
+    }
+
+
+}
