@@ -23,6 +23,12 @@
         <div class="logo">
             <a href="index.html"><img src="img/logo.png" class="leafLogo"></a>
         </div>
+        <div class="nav__menu">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <!-- <span class="nav__menu">&#9776</span> -->
         <ul class="navItem">
             <li class="navLink">
                 <a class="nava" href="#">特價商品</a>
@@ -47,6 +53,25 @@
             <a class="memberLink" href="index3.html"><i class="fa-solid fa-circle-user fa-lg"></i></a>
         </div>
     </nav>
+    <div class="navham menu-click">
+        <ul class="navHamItem">
+            <li class="navLink">
+                <a class="nava" href="#">特價商品</a>
+            </li>
+            <li class="navLink">
+                <a class="nava" href="#">熱賣商品</a>
+            </li>
+            <li class="navLink1">
+                <a class="nava1" href="#">所有商品</a>
+                <ul class="nav-sublist">
+                    <li class="navLinkblank"><a href="#" class="nava" id="nav-sublista"></a></li>
+                    <li class="navLink2"><a href="#" class="nava" id="nav-sublista">上身系列</a></li>
+                    <li class="navLink2"><a href="#" class="nava" id="nav-sublista">下身系列</a></li>
+                    <li class="navLink2"><a href="#" class="nava" id="nav-sublista">飾品配件</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </header>
 
 <body>
@@ -68,17 +93,24 @@
                 <div class="famount">
                     <button class="famountButton famountp">F</button>
                     <div class="quantity">
-                        <button class="quantityButton quantity_minus"><i class="fa-sharp fa-solid fa-minus "></i></button>
+                        <button class="quantityButton quantity_minus"><i
+                                class="fa-sharp fa-solid fa-minus "></i></button>
                         <input class="quantity_number" type="text" value="1">
                         <button class="quantityButton quantity_plus"><i class="fa-sharp fa-solid fa-plus "></i></button>
                     </div>
                 </div>
                 <div class="colorChoose">
-                    <button class="colorButton" id="colorButton1"><div class="color1"></div></button>
-                    <button class="colorButton" id="colorButton2"><div class="color2"></div></button>
-                    <button class="colorButton" id="colorButton3"><div class="color3"></div></button>
+                    <button class="colorButton" id="colorButton1">
+                        <div class="color1"></div>
+                    </button>
+                    <button class="colorButton" id="colorButton2">
+                        <div class="color2"></div>
+                    </button>
+                    <button class="colorButton" id="colorButton3">
+                        <div class="color3"></div>
+                    </button>
                 </div>
-                    <button class="addcar">加入購物車</button>
+                <button class="addcar">加入購物車</button>
                 <div class="box">
                     <p class="boxp">產品介紹</p>
                     <button class="boxButton" id="productMore">+</button>
@@ -97,7 +129,7 @@
             </div>
         </div>
         <div class="card_product_page"> <!--遮罩-->
-            <div class="card_product">  <!--產品介紹-->
+            <div class="card_product"> <!--產品介紹-->
                 <i class="fa-solid fa-square-xmark productCross"></i>
                 <div class="cardText">
                     <div class="material">
@@ -118,7 +150,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card_size">  <!--尺寸表-->
+            <div class="card_size"> <!--尺寸表-->
                 <i class="fa-solid fa-square-xmark sizeCross"></i>
                 <div class="cardText">
                     <div class="size">
@@ -146,7 +178,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card_sizeguide">  <!--試穿指南-->
+            <div class="card_sizeguide"> <!--試穿指南-->
                 <i class="fa-solid fa-square-xmark sizeguideCross"></i>
                 <div class="cardText">
                     <div class="sizeguide">
@@ -200,7 +232,7 @@
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
     </div>
     <footer>
         <div class="footer">
@@ -227,139 +259,162 @@
         </div>
     </footer>
 
-<!-- script -->
+    <!-- script -->
 
-<!--載入jQuery-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!--載入jQuery UI 1.11.4-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<!-- Custom JS -->
-<script src="js/loginScript.js"></script>
+    <!--載入jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--載入jQuery UI 1.11.4-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/loginScript.js"></script>
 
-<script>
+    <script>
 
-    $(document).ready(function() {
+        $(document).ready(function () {
 
-        $(".card_product_page").hide();
-        $(".card_product").hide();
-        $(".card_size").hide();
-        $(".card_sizeguide").hide();
-        $("#clothesBlue").hide();
-        $("#clothesCream").hide();
-
-        // 尺寸選擇CSS變化
-        $(".famountButton").click(function() {
-            $(".famountButton").css("border-color","#48685A");
-        })
-
-        // 數量減少
-        $(".quantity_minus").click(function() {
-            quantityMinus();
-        })
-
-        function quantityMinus() {
-            let inputNum = $(".quantity_number").val();
-            if(inputNum > 1) {
-                $(".quantity_number").val(--inputNum);
-            }
-            if(inputNum <= 1) {
-                $(".quantity_number").val("1");
-            }
-        }
-
-        // 數量增加
-        $(".quantity_plus").click(function() {
-            quantityPlus();
-        })
-
-        function quantityPlus() {
-            let inputNum = $(".quantity_number").val();
-            $(".quantity_number").val(++inputNum);
-        }
-
-        // 顏色選擇CSS變化
-        $("#colorButton1").click(function() {
-            $("#colorButton1").css("border-color","#48685A");
-            $("#colorButton2").css("border-color","#ced4da");
-            $("#colorButton3").css("border-color","#ced4da");
-            $("#clothesBlue").show();
-            $("#clothes").hide();
-            $("#clothesCream").hide();
-        })
-
-        $("#colorButton2").click(function() {
-            $("#colorButton2").css("border-color","#48685A");
-            $("#colorButton1").css("border-color","#ced4da");
-            $("#colorButton3").css("border-color","#ced4da");
-            $("#clothesCream").show();
+            $(".card_product_page").hide();
+            $(".card_product").hide();
+            $(".card_size").hide();
+            $(".card_sizeguide").hide();
             $("#clothesBlue").hide();
-            $("#clothes").hide();
-        })
-
-        $("#colorButton3").click(function() {
-            $("#colorButton3").css("border-color","#48685A");
-            $("#colorButton1").css("border-color","#ced4da");
-            $("#colorButton2").css("border-color","#ced4da");
-            $("#clothes").show();
             $("#clothesCream").hide();
-            $("#clothesBlue").hide();
+
+            // 尺寸選擇CSS變化
+            $(".famountButton").click(function () {
+                $(".famountButton").css("border-color", "#48685A");
+            })
+
+            // 數量減少
+            $(".quantity_minus").click(function () {
+                quantityMinus();
+            })
+
+            function quantityMinus() {
+                let inputNum = $(".quantity_number").val();
+                if (inputNum > 1) {
+                    $(".quantity_number").val(--inputNum);
+                }
+                if (inputNum <= 1) {
+                    $(".quantity_number").val("1");
+                }
+            }
+
+            // 數量增加
+            $(".quantity_plus").click(function () {
+                quantityPlus();
+            })
+
+            function quantityPlus() {
+                let inputNum = $(".quantity_number").val();
+                $(".quantity_number").val(++inputNum);
+            }
+
+            // 顏色選擇CSS變化
+            $("#colorButton1").click(function () {
+                $("#colorButton1").css("border-color", "#48685A");
+                $("#colorButton2").css("border-color", "#ced4da");
+                $("#colorButton3").css("border-color", "#ced4da");
+                $("#clothesBlue").show();
+                $("#clothes").hide();
+                $("#clothesCream").hide();
+            })
+
+            $("#colorButton2").click(function () {
+                $("#colorButton2").css("border-color", "#48685A");
+                $("#colorButton1").css("border-color", "#ced4da");
+                $("#colorButton3").css("border-color", "#ced4da");
+                $("#clothesCream").show();
+                $("#clothesBlue").hide();
+                $("#clothes").hide();
+            })
+
+            $("#colorButton3").click(function () {
+                $("#colorButton3").css("border-color", "#48685A");
+                $("#colorButton1").css("border-color", "#ced4da");
+                $("#colorButton2").css("border-color", "#ced4da");
+                $("#clothes").show();
+                $("#clothesCream").hide();
+                $("#clothesBlue").hide();
+            })
+
+            // 加入購物車CSS變化
+            $(".addcar").click(function () {
+                $(".addcar").css("background-color", "#83978E");
+            })
+
+            $(".addcar").mouseenter(function () {
+                $(".addcar").css("background-color", "#48685A");
+                $(".addcar").css("cursor", "pointer");
+            })
+
+            $(".addcar").mouseleave(function () {
+                $(".addcar").css("background-color", "#83978E");
+            })
+
+            // 產品介紹展開與收合
+            $("#productMore").click(function () {
+                $(".card_product_page").toggle();
+                $(".card_product_page").css({ "background-color": "rgba(0, 0, 0, 0.3);" });
+                $(".card_product").toggle();
+            })
+
+            $(".productCross").click(function () {
+                $(".card_product_page").css({ "background-color": "transparent" });
+                $(".card_product_page").toggle();
+                $(".card_product").toggle();
+            })
+
+            // 尺寸表展開與收合
+            $("#sizeMore").click(function () {
+                $(".card_product_page").toggle();
+                $(".card_product_page").css({ "background-color": "rgba(0, 0, 0, 0.3);" });
+                $(".card_size").toggle();
+            })
+
+            $(".sizeCross").click(function () {
+                $(".card_product_page").css({ "background-color": "transparent" });
+                $(".card_product_page").toggle();
+                $(".card_size").toggle();
+            })
+
+            // 試穿指南開與收合
+            $("#sizeguideMore").click(function () {
+                $(".card_product_page").toggle();
+                $(".card_product_page").css({ "background-color": "rgba(0, 0, 0, 0.3);" });
+                $(".card_sizeguide").toggle();
+            })
+
+            $(".sizeguideCross").click(function () {
+                $(".card_product_page").css({ "background-color": "transparent" });
+                $(".card_product_page").toggle();
+                $(".card_sizeguide").toggle();
+            })
+
+            //漢堡選單
+
+            // let btn = document.getElementById("menu__button");
+            // btn.addEventListener("click", foo, false);
+
+            // function foo() {
+            //     this.classList.toggle("change");
+            // }
+
+            // when a hanburger menu is clicked
+            let $ul = $(".navham"),
+                $menu = $(".nav__menu");
+
+            $($menu).click(function () {
+                this.classList.toggle("change");
+                // toggle menu-click Class
+                $ul.toggle("menu-click");
+
+            }); // end click event handler
+
+
         })
 
-        // 加入購物車CSS變化
-        $(".addcar").click(function() {
-            $(".addcar").css("background-color","#83978E");
-        })
-
-        $(".addcar").mouseenter(function() {
-            $(".addcar").css("background-color","#48685A");
-            $(".addcar").css("cursor","pointer");
-        })
-
-        $(".addcar").mouseleave(function() {
-            $(".addcar").css("background-color","#83978E");
-        })
-
-        // 產品介紹展開與收合
-        $("#productMore").click(function() {
-            $(".card_product_page").toggle();
-            $(".card_product_page").css({"background-color": "rgba(0, 0, 0, 0.3);"});
-            $(".card_product").toggle();
-        })
-
-        $(".productCross").click(function() {
-            $(".card_product_page").css({"background-color": "transparent"});
-            $(".card_product_page").toggle();
-            $(".card_product").toggle();
-        })
-        
-        // 尺寸表展開與收合
-        $("#sizeMore").click(function() {
-            $(".card_product_page").toggle();
-            $(".card_product_page").css({"background-color": "rgba(0, 0, 0, 0.3);"});
-            $(".card_size").toggle();
-        })
-
-        $(".sizeCross").click(function() {
-            $(".card_product_page").css({"background-color": "transparent"});
-            $(".card_product_page").toggle();
-            $(".card_size").toggle();
-        })
-
-        // 試穿指南開與收合
-        $("#sizeguideMore").click(function() {
-            $(".card_product_page").toggle();
-            $(".card_product_page").css({"background-color": "rgba(0, 0, 0, 0.3);"});
-            $(".card_sizeguide").toggle();
-        })
-
-        $(".sizeguideCross").click(function() {
-            $(".card_product_page").css({"background-color": "transparent"});
-            $(".card_product_page").toggle();
-            $(".card_sizeguide").toggle();
-        })
-    })
-    
-</script>
+    </script>
 
 </body>
+
 </html>
