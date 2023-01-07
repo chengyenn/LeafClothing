@@ -11,12 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="https://kit.fontawesome.com/1a52dd44d7.js" crossorigin="anonymous"></script>
     <!-- Firebase App is always required and must be first -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
 
     <!-- Add additional services that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-storage-compat.js"></script>
 </head>
 <header>
     <nav class="navBar">
@@ -48,11 +48,18 @@
         </div>
     </nav>
 </header>
+
 <body>
     <div class="user_page">
         <div class="card_login">
             <div class="title">
-                <p class="titlep">會員登入</p>
+                <p class="titlep">註冊帳號</p>
+            </div>
+            <div class="surname">
+                <input type="text" class="surnameinput" id="surname" placeholder="姓氏">
+            </div>
+            <div class="name">
+                <input type="text" class="nameinput" id="name" placeholder="名字">
             </div>
             <div class="email">
                 <input type="email" class="emailinput" id="email" placeholder="電子郵件，example@gmail.com">
@@ -61,12 +68,10 @@
                 <input type="password" class="passwordinput" id="password" placeholder="密碼，需至少 6 個字元">
             </div>
             <div class="submit">
-                <button class="submitButton submitText" id="btnSignIn">登入</button>
+                <button class="submitButton submitText" id="btnSignUp">註冊</button>
             </div>
             <div class="additional">
-                <a href="index4.html" class="additionala">註冊帳戶</a>
-                <span class="additional_dot">•</span>
-                <a href="index5.html" class="additionala">忘記密碼 ?</a>
+                <a href="index3.html" class="additionala">登入</a>
             </div>
         </div>
     </div>
@@ -95,54 +100,53 @@
         </div>
     </footer>
 
-<!-- script -->
+    <!-- script -->
 
-<!--載入jQuery-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!--載入jQuery UI 1.11.4-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<!-- Custom JS -->
-<script src="js/script.js"></script>
-<script src="js/loginScript.js"></script>
+    <!--載入jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--載入jQuery UI 1.11.4-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+    <script src="js/loginScript.js"></script>
 
-<script>
+    <script>
+        $(document).ready(function () {
 
-    $(document).ready(function() {
+            // email輸入框點擊後樣式
+            $(".emailinput").click(function () {
+                $(".emailinput").css("border-color", "#48685A");
+            })
 
-        // email輸入框點擊後樣式
-        $(".emailinput").click(function() {
-            $(".emailinput").css("border-color","#48685A");
+            $(".emailinput").blur(function () {
+                $(".emailinput").css("border-color", "#ced4da");
+            })
+
+            // passward輸入框點擊後樣式
+            $(".passwordinput").click(function () {
+                $(".passwordinput").css("border-color", "#48685A");
+            })
+
+            $(".passwordinput").blur(function () {
+                $(".passwordinput").css("border-color", "#ced4da");
+            })
+
+            // 登入CSS變化
+            $(".submitButton").click(function () {
+                $(".submitButton").css("background-color", "#83978E");
+            })
+
+            $(".submitButton").mouseenter(function () {
+                $(".submitButton").css("background-color", "#48685A");
+                $(".submitButton").css("cursor", "pointer");
+            })
+
+            $(".submitButton").mouseleave(function () {
+                $(".submitButton").css("background-color", "#83978E");
+            })
+
         })
-
-        $(".emailinput").blur(function() {
-            $(".emailinput").css("border-color","#ced4da");
-        })
-
-         // passward輸入框點擊後樣式
-        $(".passwordinput").click(function() {
-            $(".passwordinput").css("border-color","#48685A");
-        })
-        
-        $(".passwordinput").blur(function() {
-            $(".passwordinput").css("border-color","#ced4da");
-        })
-
-        // 登入CSS變化
-        $(".submitButton").click(function() {
-            $(".submitButton").css("background-color","#83978E");
-        })
-
-        $(".submitButton").mouseenter(function() {
-            $(".submitButton").css("background-color","#48685A");
-            $(".submitButton").css("cursor","pointer");
-        })
-
-        $(".submitButton").mouseleave(function() {
-            $(".submitButton").css("background-color","#83978E");
-        })
-
-    })
-    
-</script>
+    </script>
 </body>
+
 </html>
