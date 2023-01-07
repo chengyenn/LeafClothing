@@ -52,21 +52,17 @@
     <div class="user_page">
         <div class="card_login">
             <div class="title">
-                <p class="titlep">會員登入</p>
+                <p class="titlepassward">忘記密碼</p>
             </div>
+            <p class="passwardp">我們會向您發送電子郵件以重置您的密碼。</p>
             <div class="email">
                 <input type="email" class="emailinput" id="email" placeholder="電子郵件，example@gmail.com">
             </div>
-            <div class="password">
-                <input type="password" class="passwordinput" id="password" placeholder="密碼，需至少 6 個字元">
-            </div>
             <div class="submit">
-                <button class="submitButton submitText" id="btnSignIn">登入</button>
+                <button class="submitButton submitText">提交</button>
             </div>
             <div class="additional">
-                <a href="index4.html" class="additionala">註冊帳戶</a>
-                <span class="additional_dot">•</span>
-                <a href="index5.html" class="additionala">忘記密碼 ?</a>
+                <a class="memberLink" href="index3.html" class="additionala">取消</a>
             </div>
         </div>
     </div>
@@ -118,15 +114,6 @@
             $(".emailinput").css("border-color","#ced4da");
         })
 
-         // passward輸入框點擊後樣式
-        $(".passwordinput").click(function() {
-            $(".passwordinput").css("border-color","#48685A");
-        })
-        
-        $(".passwordinput").blur(function() {
-            $(".passwordinput").css("border-color","#ced4da");
-        })
-
         // 登入CSS變化
         $(".submitButton").click(function() {
             $(".submitButton").css("background-color","#83978E");
@@ -140,7 +127,6 @@
         $(".submitButton").mouseleave(function() {
             $(".submitButton").css("background-color","#83978E");
         })
-
     })
     
 </script>

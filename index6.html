@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaf2629 Cat-house</title>
-    <link rel="stylesheet" href="css/style3.css">
+    <link rel="stylesheet" href="css/style6.css">
     <link rel="icon" href="img/圓.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="https://kit.fontawesome.com/1a52dd44d7.js" crossorigin="anonymous"></script>
@@ -48,28 +48,25 @@
         </div>
     </nav>
 </header>
+
 <body>
     <div class="user_page">
-        <div class="card_login">
-            <div class="title">
-                <p class="titlep">會員登入</p>
+        <div class="userInfo">
+            <div class="userTitle">
+                <p class="userAccount">會員帳戶</p>
+                <a href="" class="signOut" id="signOut">登出</a>
             </div>
-            <div class="email">
-                <input type="email" class="emailinput" id="email" placeholder="電子郵件，example@gmail.com">
-            </div>
-            <div class="password">
-                <input type="password" class="passwordinput" id="password" placeholder="密碼，需至少 6 個字元">
-            </div>
-            <div class="submit">
-                <button class="submitButton submitText" id="btnSignIn">登入</button>
-            </div>
-            <div class="additional">
-                <a href="index4.html" class="additionala">註冊帳戶</a>
-                <span class="additional_dot">•</span>
-                <a href="index5.html" class="additionala">忘記密碼 ?</a>
+            <hr class="cardhr">
+            <div class="userbody">
+                <img class="userPhoto" src="img/cat.png" alt="userPhoto">
+                <div class="info">
+                    <p class="infop">顧客姓名：<span id="memberName"></span></p>
+                    <p class="infop">電子郵件：<span id="memberEmail"></span></p>
+                </div>
             </div>
         </div>
     </div>
+
     <footer>
         <div class="footer">
             <div class="footerText">
@@ -95,54 +92,38 @@
         </div>
     </footer>
 
-<!-- script -->
+    <!-- script -->
 
-<!--載入jQuery-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!--載入jQuery UI 1.11.4-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<!-- Custom JS -->
-<script src="js/script.js"></script>
-<script src="js/loginScript.js"></script>
+    <!--載入jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--載入jQuery UI 1.11.4-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+    <script src="js/loginScript.js"></script>
 
-<script>
+    <script>
+        $(document).ready(function () {
+            // Listening Login User
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    console.log(user);
+                    user.providerData.forEach(function (profile) {
+                        console.log(`  Sign-in provider: ${profile.providerId}`);
+                        console.log(`  Provider-specific UID: ${profile.uid}`);
+                        console.log(`  Name: ${profile.displayName}`);
+                        console.log(`  Email: ${profile.email}`);
+                        console.log(`  Photo URL: ${profile.photoURL}`);
+                        $("#memberName").html(profile.displayName);
+                        $("#memberEmail").append(profile.email);
+                    });
+                } else {
+                    console.log("not logged in");
+                }
+            });
 
-    $(document).ready(function() {
-
-        // email輸入框點擊後樣式
-        $(".emailinput").click(function() {
-            $(".emailinput").css("border-color","#48685A");
         })
-
-        $(".emailinput").blur(function() {
-            $(".emailinput").css("border-color","#ced4da");
-        })
-
-         // passward輸入框點擊後樣式
-        $(".passwordinput").click(function() {
-            $(".passwordinput").css("border-color","#48685A");
-        })
-        
-        $(".passwordinput").blur(function() {
-            $(".passwordinput").css("border-color","#ced4da");
-        })
-
-        // 登入CSS變化
-        $(".submitButton").click(function() {
-            $(".submitButton").css("background-color","#83978E");
-        })
-
-        $(".submitButton").mouseenter(function() {
-            $(".submitButton").css("background-color","#48685A");
-            $(".submitButton").css("cursor","pointer");
-        })
-
-        $(".submitButton").mouseleave(function() {
-            $(".submitButton").css("background-color","#83978E");
-        })
-
-    })
-    
-</script>
+    </script>
 </body>
+
 </html>
