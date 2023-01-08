@@ -23,6 +23,11 @@
         <div class="logo">
             <a href="index.html"><img src="img/logo.png" class="leafLogo"></a>
         </div>
+        <div class="nav__menu" id="menu__button">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
         <ul class="navItem">
             <li class="navLink">
                 <a class="nava" href="#">特價商品</a>
@@ -49,6 +54,28 @@
             </div>
         </div>
     </nav>
+    <div class="nav_page"><!--遮罩-->
+        <div class="navham menu-click overlay" id="toright">
+            <!-- <a href="javascript:void(0)" id="closelay">&times;</a> -->
+            <ul class="navHamItem">
+                <li class="navLink">
+                    <a class="nava" href="#">特價商品</a>
+                </li>
+                <li class="navLink">
+                    <a class="nava" href="#">熱賣商品</a>
+                </li>
+                <li class="navLink1">
+                    <a class="nava1" href="#">所有商品</a>
+                    <ul class="nav-sublist">
+                        <li class="navLinkblank"><a href="#" class="nava" id="nav-sublista"></a></li>
+                        <li class="navLink2"><a href="#" class="nava" id="nav-sublista">上身系列</a></li>
+                        <li class="navLink2"><a href="#" class="nava" id="nav-sublista">下身系列</a></li>
+                        <li class="navLink2"><a href="#" class="nava" id="nav-sublista">飾品配件</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
 </header>
 
 <body>
@@ -94,6 +121,9 @@
             <div class="footerIcon">
                 <a class=icona href=""><i class="fa-brands fa-line fa-2x"></i></a>
                 <a class=icona href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
+            </div>
+            <div class="box2xs">
+                <p class=footerp>Copyright © Leaf2629 Cat-house</p>
             </div>
         </div>
     </footer>
@@ -144,7 +174,33 @@
                 $(".submitButton").css("background-color", "#83978E");
             })
 
+            //漢堡選單
+            $(".nav_page").hide();
+
+            let $ul = $(".navham"),
+                $menu = $(".nav__menu");
+
+            $($menu).click(function () {
+                $(".nav_page").toggle();
+                $(".nav_page").css({ "background-color": "rgba(0, 0, 0, 0.3);" });
+                $ul.toggle("menu-click");
+            })
+
         })
+        let btn = document.getElementById("menu__button");
+        btn.addEventListener("click", openlay, false);
+        let closelays = document.getElementById("closelay");
+        closelays.addEventListener("click", closelay, false);
+
+        function openlay() {
+            this.classList.toggle("change");
+            document.getElementById("toright").style.width = "40%";
+        }
+
+        function closelay() {
+            document.getElementById("toright").style.width = "0%";
+        }
+
 
     </script>
 </body>

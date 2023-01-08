@@ -4,9 +4,7 @@
     box-sizing: border-box;
 }
 
-
 /* nav */
-
 .navBar {
     display: flex;
     flex-direction: row;
@@ -73,10 +71,33 @@
 
     }
 
-    .car,
-    .member {
-        margin-right: 40%;
+    .icona {
+        margin: 0 25%;
+    }
 
+    .navLink {
+        margin-right: 6%;
+    }
+
+    .navLink1 {
+        margin-right: 4%;
+    }
+
+    .nav-sublist {
+        position: absolute;
+        background-color: #83978E;
+        padding: 0;
+        width: 150px;
+        display: none;
+        right: 104px;
+    }
+
+    .car {
+        margin: 0 3% 0 2%;
+    }
+
+    .member {
+        margin: 0 4% 0 1.5%;
     }
 }
 
@@ -142,6 +163,26 @@
     color: #2D4263;
 }
 
+@media screen and (max-width: 480px) {
+    .nav-sublist {
+        position: absolute;
+        padding: 0;
+        width: 100%;
+        display: none;
+        margin-right: -75px;
+    }
+
+    .navLink2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #90a29a;
+        width: 80%;
+        height: 45px;
+        margin-left: 80px;
+
+    }
+}
 
 /* hamburgernav */
 .navham {
@@ -716,35 +757,6 @@ table {
 
 
 @media screen and (max-width: 850px) {
-
-    .icona {
-        margin: 0 25%;
-    }
-
-    .navLink {
-        margin-right: 6%;
-    }
-
-    .navLink1 {
-        margin-right: 4%;
-    }
-
-    .nav-sublist {
-        position: absolute;
-        background-color: #83978E;
-        padding: 0;
-        width: 150px;
-        display: none;
-        right: 104px;
-    }
-
-    .car {
-        margin: 0 3% 0 2%;
-    }
-
-    .member {
-        margin: 0 4% 0 1.5%;
-    }
 
     .clothes {
         max-width: 80%;
