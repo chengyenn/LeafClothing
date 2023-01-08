@@ -32,7 +32,7 @@
     margin-right: 0%;
     margin-left: auto;
     padding: 0;
-   
+
 
 }
 
@@ -50,7 +50,7 @@
     justify-content: flex-end;
     width: 10%;
     padding: 0;
-    
+
 }
 
 .car,
@@ -58,23 +58,56 @@
     margin-right: 25%;
 
 }
+
 @media screen and (max-width: 850px) {
-   
-    
+
+
     .navIcon {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         width: 15%;
         padding: 0;
-        
+
     }
-    
-    .car,
+
+    .navLink {
+        margin-right: 6%;
+    }
+
+    .navLink1 {
+        margin-right: 4%;
+    }
+
+    .nav-sublist {
+        position: absolute;
+        background-color: #83978E;
+        padding: 0;
+        width: 150px;
+        display: none;
+        right: 104px;
+    }
+
+    .car {
+        margin: 0 3% 0 2%;
+    }
+
     .member {
-        margin-right: 40%;
-    
+        margin: 0 4% 0 1.5%;
     }
+}
+
+@media screen and (max-width: 480px) {
+    .navIcon {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 25%;
+        padding: 0;
+        margin-right: 18%;
+        margin-left: auto;
+    }
+
 }
 
 .navLink2 {
@@ -124,6 +157,139 @@
 .nava:hover,
 .nava1:hover {
     color: #2D4263;
+}
+
+@media screen and (max-width: 480px) {
+    .nav-sublist {
+        position: absolute;
+        padding: 0;
+        width: 100%;
+        display: none;
+        margin-right: -55px;
+
+    }
+
+    .navLink2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #90a29a;
+        width: 80%;
+        height: 45px;
+        margin-left: 60px;
+
+    }
+}
+
+/* hamburgernav */
+.navham {
+    display: none;
+    width: 100%;
+    height: 500px;
+}
+
+.nav_page {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 1422px;
+}
+
+.overlay2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 1422px;
+    z-index: 2;
+    background-color: #83978E;
+    overflow-x: hidden;
+
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.nav__menu {
+    display: none;
+    font-size: 2em;
+    position: absolute;
+    padding: 0 15px;
+    border-radius: 4px;
+    right: 10px;
+}
+
+.change .bar1 {
+    transform: translate(0, 9px) rotate(45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -9px) rotate(-45deg);
+}
+
+
+
+
+
+@media screen and (max-width: 480px) {
+
+    .nav__menu {
+        display: block;
+
+    }
+
+    /* .nav__menu:hover {
+        background-color: darkgray;
+        color: white;
+        cursor: pointer;
+    } */
+
+    .navItem {
+        display: none;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navHamItem {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        width: 100%;
+        height: 20%;
+        background-color: #83978E;
+        right: 0%;
+        margin-left: 20px;
+    }
+
+    .menu-click {
+        display: block;
+    }
+
+    .navham {
+        display: none;
+    }
+
+    /* .car {
+        margin: 0 1.5% 10% 20%;
+    }
+    
+    .member {
+        margin: 0 3% 0 1.5%;
+    } */
+
 }
 
 
@@ -221,6 +387,21 @@ ul {
     margin-top: 10px;
 }
 
+.box2xs {
+    display: none;
+    margin-top: 40px;
+    height: 20px;
+    margin-bottom: 5px;
+}
+
+.box2xs p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
 .footerLink {
     margin: 0 10px;
 }
@@ -256,36 +437,11 @@ ul {
     color: white;
 }
 
-.overlay {
-	display: none;
-	background: rgba(0, 0, 0, .65);
-	color: #fff;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	z-index: 100;
-	widows: 100%;
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    padding-top: 35px;
-	box-sizing: border-box;
-	pointer-events: none;
-	font-weight: 100;
-    font-size: 12px;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
+@media screen and (max-width: 850px) {
+    .icona {
+        margin: 0 25%;
+    }
 }
-
-.overlay h3 {
-	font-weight: 100;
-	margin: 0;
-	padding: 0;
-}
-
-/* Grid Style */
-
-
 @media screen and (max-width: 768px) {
 
     .row {
@@ -299,14 +455,10 @@ ul {
         width: calc(100%/2);
     }
 
-    .icona {
-        margin: 0 25%;
-    }
-
     .navLink {
         margin-right: 6%;
     }
-    
+
     .navLink1 {
         margin-right: 4%;
     }
@@ -314,7 +466,7 @@ ul {
     .car {
         margin: 0 3% 0 2%;
     }
-    
+
     .member {
         margin: 0 4% 0 1.5%;
     }
@@ -322,7 +474,7 @@ ul {
     .gallery_item {
         margin-top: 40px;
     }
-    
+
     .gallery_item1 {
         margin-top: 40px;
     }
@@ -345,6 +497,84 @@ ul {
     }
 
 }
+
+@media screen and (max-width: 480px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        height: 320px;
+
+    }
+
+    .footerText {
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+        margin-left: 0%;
+    }
+
+    .box2 {
+        display: none;
+    }
+
+    .box1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-bottom: 10px;
+        height: 100%;
+
+    }
+
+    .footerIcon {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .icona {
+        margin: 0 15%;
+    }
+
+    .box2xs {
+        display: block;
+    }
+}
+
+.overlay {
+    display: none;
+    background: rgba(0, 0, 0, .65);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    widows: 100%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding-top: 35px;
+    box-sizing: border-box;
+    pointer-events: none;
+    font-weight: 100;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+}
+
+.overlay h3 {
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+
+/* Grid Style */
+
+
 
 @media screen and (max-width: 480px) {
 

@@ -4,9 +4,7 @@
     box-sizing: border-box;
 }
 
-
 /* nav */
-
 .navBar {
     display: flex;
     flex-direction: row;
@@ -73,10 +71,29 @@
 
     }
 
-    .car,
-    .member {
-        margin-right: 40%;
+    .navLink {
+        margin-right: 6%;
+    }
 
+    .navLink1 {
+        margin-right: 4%;
+    }
+
+    .nav-sublist {
+        position: absolute;
+        background-color: #83978E;
+        padding: 0;
+        width: 150px;
+        display: none;
+        right: 104px;
+    }
+
+    .car {
+        margin: 0 3% 0 2%;
+    }
+
+    .member {
+        margin: 0 4% 0 1.5%;
     }
 }
 
@@ -142,6 +159,26 @@
     color: #2D4263;
 }
 
+@media screen and (max-width: 480px) {
+    .nav-sublist {
+        position: absolute;
+        padding: 0;
+        width: 100%;
+        display: none;
+        margin-right: -75px;
+    }
+
+    .navLink2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #90a29a;
+        width: 80%;
+        height: 45px;
+        margin-left: 80px;
+
+    }
+}
 
 /* hamburgernav */
 .navham {
@@ -211,11 +248,11 @@
 
     }
 
-    .nav__menu:hover {
+    /* .nav__menu:hover {
         background-color: darkgray;
         color: white;
         cursor: pointer;
-    }
+    } */
 
     .navItem {
         display: none;
@@ -423,6 +460,12 @@ ul {
     transition: .1s;
 }
 
+@media screen and (max-width: 480px) {
+    .addcar {
+        width: 100%;
+    }
+}
+
 .addcar:active {
     transform: scale(1);
     box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.2);
@@ -508,8 +551,17 @@ hr {
 
 .box2xs {
     display: none;
-    margin-top: 30px;
+    margin-top: 40px;
     height: 20px;
+    margin-bottom: 5px;
+}
+
+.box2xs p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6px;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .footerLink {
@@ -545,6 +597,12 @@ hr {
 .fa-cart-shopping,
 .fa-circle-user {
     color: white;
+}
+
+@media screen and (max-width: 850px) {
+    .icona {
+        margin: 0 25%;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -584,6 +642,10 @@ hr {
         justify-content: center;
         align-items: center;
 
+    }
+
+    .icona {
+        margin: 0 15%;
     }
 
     .box2xs {
@@ -716,35 +778,6 @@ table {
 
 
 @media screen and (max-width: 850px) {
-
-    .icona {
-        margin: 0 25%;
-    }
-
-    .navLink {
-        margin-right: 6%;
-    }
-
-    .navLink1 {
-        margin-right: 4%;
-    }
-
-    .nav-sublist {
-        position: absolute;
-        background-color: #83978E;
-        padding: 0;
-        width: 150px;
-        display: none;
-        right: 104px;
-    }
-
-    .car {
-        margin: 0 3% 0 2%;
-    }
-
-    .member {
-        margin: 0 4% 0 1.5%;
-    }
 
     .clothes {
         max-width: 80%;
