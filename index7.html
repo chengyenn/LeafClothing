@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf2629 Cat-house</title>
+    <link rel="stylesheet" href="css/style7.css">
+    <link rel="icon" href="img/圓.png">
+    <script src="https://kit.fontawesome.com/1a52dd44d7.js" crossorigin="anonymous"></script>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
+</head>
+<header>
+    <nav class="navBar">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" class="leafLogo"></a>
+        </div>
+        <ul class="navItem">
+            <li class="navLink">
+                <a class="nava" href="#">特價商品</a>
+            </li>
+            <li class="navLink">
+                <a class="nava" href="#">熱賣商品</a>
+            </li>
+            <li class="navLink1">
+                <a class="nava1" href="#">所有商品</a>
+                <ul class="nav-sublist">
+                    <li class="navLinkblank"><a href="#" class="nava" id="nav-sublista"></a></li>
+                    <li class="navLink2"><a href="#" class="nava" id="nav-sublista">上身系列</a></li>
+                    <li class="navLink2"><a href="#" class="nava" id="nav-sublista">下身系列</a></li>
+                    <li class="navLink2"><a href="#" class="nava" id="nav-sublista">飾品配件</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="navIcon">
+            <div class="car">
+                <a href=""><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+            </div>
+            <div class="member">
+                <a class="memberLink" href="index3.html"><i class="fa-solid fa-circle-user fa-lg"></i></a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="shoppingCart">
+        <div class="order">
+            <p class="titlep">您的訂單</p>
+            <a class="shoppingMore" href="index.html"><i class="fa-sharp fa-solid fa-arrow-left"></i>&emsp;繼續購物</a>
+            <hr class="cardhr">
+            <div class="orderGoods">
+                <img class="goodImg" src="img/圖片 1.png" alt="商品圖">
+                <div class="goodInfo">
+                    <p class="goodTitle">一起去跑步的朋朋＿坦克背心</p>
+                    <p class="goodPrice">NT$ 790</p>
+                    <p class="goodSize">Size F</p>
+                    <p class="goodColor">寶藍</p>
+                    <div class="quantity">
+                        <button class="quantityButton quantity_minus"><i
+                                class="fa-sharp fa-solid fa-minus "></i></button>
+                        <input class="quantity_number" type="text" value="1">
+                        <button class="quantityButton quantity_plus"><i class="fa-sharp fa-solid fa-plus "></i></button>
+                    </div>
+                </div>
+            </div>
+            <hr class="cardhr">
+            <div class="orderCost">
+                <div class="subtotal">
+                    <p class="subtotalp">小計</p>
+                    <p class="subtotalp">NT$ 790</p>
+                </div>
+                <div class="freight">
+                    <p class="freightp">運費</p>
+                    <p class="freightp">NT$ 100</p>
+                </div>
+                <div class="total">
+                    <p class="totalp">總計</p>
+                    <p class="totalp">NT$ 890</p>
+                </div>
+            </div>
+        </div>
+        <div class="customer">
+            <p class="titlep">顧客資訊</p>
+            <hr class="cardhr">
+            <div class="customerInfo">
+                <div class="basicInfo">
+                    <div class="information"><p class="infop">顧客姓名</p><input class="infoInput" type="text" placeholder="Name，王小明"></div>
+                    <div class="information"><p class="infop">電子郵件</p><input class="infoInput" type="email" placeholder="Email，example@gmail.com"></div>
+                    <div class="information"><p class="infop">聯絡電話</p><input class="infoInput" type="number" placeholder="Phone，0912345678"></div>
+                </div>
+                <div class="orderInfo">
+                    <div class="information">
+                        <p class="infop">取貨方式</p>
+                        <select class="infoSelect" name="" id="">
+                            <option value="" selected>宅配</option>
+                        </select>
+                    </div>
+                    <div class="information"><p class="infop">收件地址</p><input class="infoInput" type="text" placeholder="Address，縣/市/鄉/鎮/區/街/路/號/樓"></div>
+                </div>
+            </div>
+        </div>
+        <div class="submit">
+            <button class="submitButton submitText">完成訂單</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="footerText">
+                <ul class="box1">
+                    <li class="footerLink">
+                        <a class=footera href="">最新消息</a>
+                    </li>
+                    <li class="footerLink">
+                        <a class=footera href="">常見問題</a>
+                    </li>
+                    <li class="footerLink">
+                        <a class=footera href="">聯絡我們</a>
+                    </li>
+                </ul>
+                <div class="box2">
+                    <p class=footerp>Copyright © Leaf2629 Cat-house</p>
+                </div>
+            </div>
+            <div class="footerIcon">
+                <a class=icona href=""><i class="fa-brands fa-line fa-2x"></i></a>
+                <a class=icona href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- script -->
+
+    <!--載入jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--載入jQuery UI 1.11.4-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/loginScript.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            // 數量減少
+            $(".quantity_minus").click(function () {
+                quantityMinus();
+            })
+
+            function quantityMinus() {
+                let inputNum = $(".quantity_number").val();
+                if (inputNum > 1) {
+                    $(".quantity_number").val(--inputNum);
+                }
+                if (inputNum <= 1) {
+                    $(".quantity_number").val("1");
+                }
+            }
+
+            // 數量增加
+            $(".quantity_plus").click(function () {
+                quantityPlus();
+            })
+
+            function quantityPlus() {
+                let inputNum = $(".quantity_number").val();
+                $(".quantity_number").val(++inputNum);
+            }
+
+            // 完成訂單CSS變化
+            $(".submitButton").click(function () {
+                $(".submitButton").css("background-color", "#83978E");
+            })
+
+            $(".submitButton").mouseenter(function () {
+                $(".submitButton").css("background-color", "#48685A");
+                $(".submitButton").css("cursor", "pointer");
+            })
+
+            $(".submitButton").mouseleave(function () {
+                $(".submitButton").css("background-color", "#83978E");
+            })
+
+        });
+    </script>
+</body>
+
+</html>
