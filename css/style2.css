@@ -28,10 +28,14 @@
 .navItem {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 70%;
     justify-content: flex-end;
     margin: 0;
+    margin-right: 0%;
+    margin-left: auto;
     padding: 0;
+
+
 }
 
 .navLink {
@@ -40,6 +44,53 @@
 
 .navLink1 {
     margin-right: 2%;
+}
+
+.navIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 10%;
+    padding: 0;
+
+}
+
+.car,
+.member {
+    margin-right: 25%;
+
+}
+
+@media screen and (max-width: 850px) {
+
+
+    .navIcon {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 15%;
+        padding: 0;
+
+    }
+
+    .car,
+    .member {
+        margin-right: 40%;
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navIcon {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 25%;
+        padding: 0;
+        margin-right: 18%;
+        margin-left: auto;
+    }
+
 }
 
 .navLink2 {
@@ -96,8 +147,25 @@
 .navham {
     display: none;
     width: 100%;
-    height: auto;
+    height: 500px;
+}
+
+.nav_page {
     position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 1422px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 1422px;
+    z-index: 2;
+    background-color: #83978E;
+    overflow-x: hidden;
 
 }
 
@@ -109,6 +177,15 @@
     background-color: white;
     margin: 6px 0;
     transition: 0.4s;
+}
+
+.nav__menu {
+    display: none;
+    font-size: 2em;
+    position: absolute;
+    padding: 0 15px;
+    border-radius: 4px;
+    right: 10px;
 }
 
 .change .bar1 {
@@ -123,24 +200,66 @@
     transform: translate(0, -9px) rotate(-45deg);
 }
 
-.nav__menu {
-    display: none;
+
+
+
+
+@media screen and (max-width: 480px) {
+
+    .nav__menu {
+        display: block;
+
+    }
+
+    .nav__menu:hover {
+        background-color: darkgray;
+        color: white;
+        cursor: pointer;
+    }
+
+    .navItem {
+        display: none;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navHamItem {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        width: 100%;
+        height: 20%;
+        background-color: #83978E;
+        right: 0%;
+        margin-left: 20px;
+    }
+
+    .menu-click {
+        display: block;
+    }
+
+    .navham {
+        display: none;
+    }
+
+    /* .car {
+        margin: 0 1.5% 10% 20%;
+    }
+    
+    .member {
+        margin: 0 3% 0 1.5%;
+    } */
+
 }
-
-
 
 
 ul {
     list-style: none;
 }
 
-.car {
-    margin: 0 1.5% 0 2%;
-}
 
-.member {
-    margin: 0 3% 0 1.5%;
-}
 
 /* body */
 .first {
@@ -387,6 +506,12 @@ hr {
     margin-top: 10px;
 }
 
+.box2xs {
+    display: none;
+    margin-top: 30px;
+    height: 20px;
+}
+
 .footerLink {
     margin: 0 10px;
 }
@@ -420,6 +545,50 @@ hr {
 .fa-cart-shopping,
 .fa-circle-user {
     color: white;
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        height: 320px;
+
+    }
+
+    .footerText {
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+        margin-left: 0%;
+    }
+
+    .box2 {
+        display: none;
+    }
+
+    .box1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-bottom: 10px;
+        height: 100%;
+
+    }
+
+    .footerIcon {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .box2xs {
+        display: block;
+    }
 }
 
 /* 彈跳視窗 */
@@ -641,45 +810,8 @@ table {
         margin-left: 10%;
     }
 
-    .nav__menu {
-        display: block;
-        font-size: 2em;
-        position: absolute;
-        padding: 0 15px;
-        border-radius: 4px;
-        top: 15px;
-        right: 10px;
-    }
-
-    .nav__menu:hover {
-        background-color: darkgray;
-        color: white;
-        cursor: pointer;
-    }
-
-    .navItem {
-        display: none;
-        flex-wrap: wrap;
-        margin: 0;
-        padding: 0;
-    }
-
-    .navHamItem {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 70%;
-        background-color: #83978E;
-        right: 0%;
-    }
-
-    .menu-click {
-        display: block;
-    }
-
-    .navham {
-        display: none;
+    .title {
+        font-size: 24px;
     }
 
 }
