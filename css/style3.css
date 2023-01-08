@@ -69,9 +69,6 @@
         padding: 0;
 
     }
-    .icona {
-        margin: 0 25%;
-    }
 
     .navLink {
         margin-right: 6%;
@@ -98,7 +95,7 @@
         margin: 0 4% 0 1.5%;
     }
 
-   
+
 }
 
 @media screen and (max-width: 480px) {
@@ -162,6 +159,7 @@
 .nava1:hover {
     color: #2D4263;
 }
+
 @media screen and (max-width: 480px) {
     .nav-sublist {
         position: absolute;
@@ -453,8 +451,17 @@ ul {
 
 .box2xs {
     display: none;
-    margin-top: 30px;
+    margin-top: 40px;
     height: 20px;
+    margin-bottom: 5px;
+}
+
+.box2xs p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6px;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .footerLink {
@@ -491,6 +498,13 @@ ul {
 .fa-circle-user {
     color: white;
 }
+
+@media screen and (max-width: 850px) {
+    .icona {
+        margin: 0 25%;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .footer {
         display: flex;
@@ -528,6 +542,10 @@ ul {
         justify-content: center;
         align-items: center;
 
+    }
+
+    .icona {
+        margin: 0 15%;
     }
 
     .box2xs {
