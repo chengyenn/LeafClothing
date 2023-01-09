@@ -10,12 +10,12 @@
     <link rel="icon" href="img/圓.png">
     <script src="https://kit.fontawesome.com/1a52dd44d7.js" crossorigin="anonymous"></script>
     <!-- Firebase App is always required and must be first -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
 
     <!-- Add additional services that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-storage-compat.js"></script>
 </head>
 <header>
     <nav class="navBar">
@@ -59,10 +59,10 @@
             <div class="orderGoods">
                 <img class="goodImg" src="img/圖片 1.png" alt="商品圖">
                 <div class="goodInfo">
-                    <p class="goodTitle">一起去跑步的朋朋＿坦克背心</p>
-                    <p class="goodPrice">NT$ 790</p>
-                    <p class="goodSize">Size F</p>
-                    <p class="goodColor">寶藍</p>
+                    <p class="goodTitle"></p>
+                    <p class="goodPrice">NT$ <span id="price"></span></p>
+                    <p class="goodSize">Size <span id="goodSize"></span></p>
+                    <p class="goodColor"></p>
                     <div class="quantity">
                         <button class="quantityButton quantity_minus"><i
                                 class="fa-sharp fa-solid fa-minus "></i></button>
@@ -75,7 +75,7 @@
             <div class="orderCost">
                 <div class="subtotal">
                     <p class="subtotalp">小計</p>
-                    <p class="subtotalp">NT$ 790</p>
+                    <p class="subtotalp">NT$ <span id="subtotalp"></span></p>
                 </div>
                 <div class="freight">
                     <p class="freightp">運費</p>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="total">
                     <p class="totalp">總計</p>
-                    <p class="totalp">NT$ 890</p>
+                    <p class="totalp">NT$ <span id="totalp"></span></p>
                 </div>
             </div>
         </div>
@@ -92,9 +92,12 @@
             <hr class="cardhr">
             <div class="customerInfo">
                 <div class="basicInfo">
-                    <div class="information"><p class="infop">顧客姓名</p><input class="infoInput" type="text" placeholder="Name，王小明"></div>
-                    <div class="information"><p class="infop">電子郵件</p><input class="infoInput" type="email" placeholder="Email，example@gmail.com"></div>
-                    <div class="information"><p class="infop">聯絡電話</p><input class="infoInput" type="number" placeholder="Phone，0912345678"></div>
+                    <div class="information"><label class="infop" for="name">顧客姓名</label><input id="name"
+                            class="infoInput" type="text" placeholder="Name，王小明"></div>
+                    <div class="information"><label class="infop" for="email">電子郵件</label><input id="email"
+                            class="infoInput" type="email" placeholder="Email，example@gmail.com"></div>
+                    <div class="information"><label class="infop" for="phone">聯絡電話</label><input id="phone"
+                            class="infoInput" type="text" placeholder="Phone，0912345678"></div>
                 </div>
                 <div class="orderInfo">
                     <div class="information">
@@ -103,7 +106,8 @@
                             <option value="" selected>宅配</option>
                         </select>
                     </div>
-                    <div class="information"><p class="infop">收件地址</p><input class="infoInput" type="text" placeholder="Address，縣/市/鄉/鎮/區/街/路/號/樓"></div>
+                    <div class="information"><label class="infop" for="address">收件地址</label><input id="address"
+                            class="infoInput" type="text" placeholder="Address，縣/市/鄉/鎮/區/街/路/號/樓"></div>
                 </div>
             </div>
         </div>
@@ -143,8 +147,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--載入jQuery UI 1.11.4-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <!-- Custom JS -->
-    <script src="js/loginScript.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -187,6 +189,58 @@
             $(".submitButton").mouseleave(function () {
                 $(".submitButton").css("background-color", "#83978E");
             })
+
+            // Initialize Firebase
+            firebase.initializeApp({
+                apiKey: "AIzaSyBMJUebx1GMqfdCA-XaP35oyKGH-AgiV2U",
+                authDomain: "finalproject-b039c.firebaseapp.com",
+                projectId: "finalproject-b039c",
+                storageBucket: "finalproject-b039c.appspot.com",
+                messagingSenderId: "501590789422",
+                appId: "1:501590789422:web:0c6e94aaef920e7891bebf"
+            });
+            // Reference Firebase Auth
+            const auth = firebase.auth();
+
+            // 購物車連結          
+            let db = firebase.firestore();
+            let shoppingCartRef = db.collection("shopping cart");
+            let userEmail;
+            let chooseColor;
+
+            // Listening Login User
+            auth.onAuthStateChanged(function (user) {
+                if (user) {
+                    console.log(user);
+                    user.providerData.forEach(function (profile) {
+                        $("#name").val(profile.displayName);
+                        $("#email").val(profile.email);
+                        userEmail = profile.email;
+                    });
+                    $(".memberLink").attr("href", "index6.html");
+                } else {
+                    console.log("not logged in");
+                    alert("請先登入您的會員！")
+                    window.location.href = "../index3.html";
+                    $(".memberLink").attr("href", "index3.html");
+                }
+            });
+
+            // 監聽
+            let docRef = shoppingCartRef.doc(userEmail);
+            docRef.onSnapshot(
+                function (doc) {
+                    $(".goodTitle").html(doc.data().goodsTitle);
+                    $("#price").html(doc.data().goodsPrice);
+                    $("#goodSize").html(doc.data().goodsSize);
+                    $(".goodColor").html(doc.data().goodsColor);
+                    $(".quantity_number").val(doc.data().goodsQuantity);
+                    var orderPrice = parseInt(doc.data().goodsPrice);
+                    var orderQuantity = parseInt(doc.data().goodsQuantity);
+                    $("#subtotalp").html(orderPrice * orderQuantity);
+                    $("#totalp").html((orderPrice * orderQuantity) + 100);
+                }
+            );
 
         });
     </script>
