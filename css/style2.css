@@ -97,15 +97,30 @@
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 550px) {
     .navIcon {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         width: 25%;
         padding: 0;
+        margin-right: 13%;
+        margin-left: auto;
+
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .navIcon {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 24%;
+        padding: 0;
         margin-right: 18%;
         margin-left: auto;
+
     }
 
 }
@@ -159,7 +174,7 @@
     color: #2D4263;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 550px) {
     .nav-sublist {
         position: absolute;
         padding: 0;
@@ -191,7 +206,7 @@
     position: absolute;
     z-index: 1;
     width: 100%;
-    height: 1422px;
+    height: 100vh;
 }
 
 .overlay {
@@ -199,7 +214,7 @@
     top: 0;
     right: 0;
     width: 0;
-    height: 1422px;
+    height: 100vh;
     z-index: 2;
     background-color: #83978E;
     overflow-x: hidden;
@@ -241,7 +256,7 @@
 
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 550px) {
 
     .nav__menu {
         display: block;
@@ -460,7 +475,7 @@ ul {
     transition: .1s;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 550px) {
     .addcar {
         width: 100%;
     }
@@ -605,7 +620,13 @@ hr {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 754px) {
+    .icona {
+        margin: 0 15%;
+    }
+}
+
+@media screen and (max-width: 550px) {
     .footer {
         display: flex;
         flex-direction: column;
@@ -670,8 +691,9 @@ hr {
 .card_sizeguide {
     z-index: 99;
     background-color: #FFFFFF;
-    width: 1000px;
+    width: 80%;
     height: 600px;
+
 }
 
 .fa-square-xmark {
@@ -693,9 +715,6 @@ hr {
 }
 
 .cardText {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     margin: 70px;
 }
 
@@ -705,6 +724,7 @@ hr {
 .sizeguide {
     width: 100%;
     padding-bottom: 10%;
+    margin: auto;
 }
 
 .cardTitle {
@@ -803,6 +823,44 @@ table {
 
 }
 
+@media screen and (max-width: 764px) {
+
+    .card_product,
+    .card_size,
+    .card_sizeguide {
+        overflow-x: scroll;
+    }
+
+    .material,
+    .description,
+    .size,
+    .sizeguide {
+        width: 900px;
+        padding-bottom: 10%;
+        margin: auto;
+    }
+
+    .cardText {
+        margin: 70px;
+        white-space: nowrap
+    }
+
+    .sizeguideTitle,
+    .sizeguideContent {
+        font-size: 14px;
+        margin: 0 2%;
+        color: #888888;
+
+    }
+
+    .fa-square-xmark {
+        position: sticky;
+        margin-top: 10px;
+        margin-right: 8px;
+    }
+
+}
+
 @media screen and (max-width: 754px) {
 
     .first {
@@ -831,6 +889,20 @@ table {
 
     .innerbox {
         width: 80%;
+    }
+
+    .card_product_page {
+        height: 100vh;
+        margin-bottom: -200px;
+        align-self: flex-end;
+
+    }
+
+    .card_product,
+    .card_size,
+    .card_sizeguide {
+        width: 80%;
+        height: 90vh;
     }
 
 }
