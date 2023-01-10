@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaf2629 Cat-house</title>
+    <!--載入boostrap-->
+    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
     <link rel="stylesheet" href="css/style2.css">
     <link rel="icon" href="img/圓.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,6 +57,7 @@
             </div>
         </div>
     </nav>
+
     <div class="nav_page">
         <!--遮罩-->
         <div class="navham menu-click overlay" id="toright">
@@ -138,10 +141,13 @@
             <!--遮罩-->
             <div class="card_product">
                 <!--產品介紹-->
-                <i class="fa-solid fa-square-xmark productCross"></i>
-                <div class="cardText">
+                <div class="carTitlebox">
+                    <p class="cardTitle">產品介紹</p>
+                    <i class="fa-solid fa-square-xmark productCross"></i>
+                </div>
+                <div class="cardText0">
                     <div class="material">
-                        <p class="cardTitle">材質</p>
+                        <p class="cardTitle0">材質</p>
                         <hr class="cardhr">
                         <ul>
                             <li class="cardli">・棉 70%</li>
@@ -149,7 +155,7 @@
                         </ul>
                     </div>
                     <div class="description">
-                        <p class="cardTitle">商品介紹</p>
+                        <p class="cardTitle0">商品介紹</p>
                         <hr class="cardhr">
                         <ul>
                             <li class="cardli">・Made In Korea</li>
@@ -160,11 +166,13 @@
             </div>
             <div class="card_size">
                 <!--尺寸表-->
-                <i class="fa-solid fa-square-xmark sizeCross"></i>
+                <div class="carTitlebox">
+                    <p class="cardTitle">尺寸表</p>
+                    <i class="fa-solid fa-square-xmark sizeCross"></i>
+                </div>
                 <div class="cardText">
                     <div class="size">
-                        <p class="cardTitle">尺寸表</p>
-                        <hr class="cardhr">
+                        <hr class="cardhr0">
                         <table>
                             <tr>
                                 <td class="sizeTitle">尺寸</td>
@@ -174,7 +182,7 @@
                                 <td class="sizeTitle">全長</td>
                             </tr>
                         </table>
-                        <hr class="sizehr">
+                        <hr class="sizehr0">
                         <table>
                             <tr>
                                 <td class="sizeContent">&nbsp;F&nbsp;</td>
@@ -189,10 +197,12 @@
             </div>
             <div class="card_sizeguide">
                 <!--試穿指南-->
-                <i class="fa-solid fa-square-xmark sizeguideCross"></i>
+                <div class="carTitlebox">
+                    <p class="cardTitle">試穿指南</p>
+                    <i class="fa-solid fa-square-xmark sizeguideCross"></i>
+                </div>
                 <div class="cardText">
                     <div class="sizeguide">
-                        <p class="cardTitle">試穿指南</p>
                         <hr class="cardhr">
                         <table>
                             <tr>
@@ -450,8 +460,8 @@
 
                 // 傳至後台
                 docRef.set({
-                    "goodsTitle": $(".title").html(), 
-                    "goodsPrice": $(".price").html().toString().substr(4), 
+                    "goodsTitle": $(".title").html(),
+                    "goodsPrice": $(".price").html().toString().substr(4),
                     "goodsSize": $("#size").html(),
                     "goodsColor": chooseColor,
                     "goodsQuantity": $(".quantity_number").val()
@@ -462,15 +472,15 @@
             })
 
             // color事件
-            $("#colorButton1").click(function(){
+            $("#colorButton1").click(function () {
                 chooseColor = $("#colorButton1").val();
             })
 
-            $("#colorButton2").click(function(){
+            $("#colorButton2").click(function () {
                 chooseColor = $("#colorButton2").val();
             })
 
-            $("#colorButton3").click(function(){
+            $("#colorButton3").click(function () {
                 chooseColor = $("#colorButton3").val();
             })
 
