@@ -106,10 +106,11 @@
         padding: 0;
         margin-right: 13%;
         margin-left: auto;
-        
+
     }
 
 }
+
 @media screen and (max-width: 450px) {
     .navIcon {
         display: flex;
@@ -119,7 +120,7 @@
         padding: 0;
         margin-right: 18%;
         margin-left: auto;
-       
+
     }
 
 }
@@ -296,13 +297,6 @@
         display: none;
     }
 
-    /* .car {
-        margin: 0 1.5% 10% 20%;
-    }
-    
-    .member {
-        margin: 0 3% 0 1.5%;
-    } */
 
 }
 
@@ -317,9 +311,15 @@ ul {
     width: 100%;
     height: auto;
 }
-.row{
+
+.row {
     display: none;
 }
+
+.row0 {
+    display: none;
+}
+
 .titlep {
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -455,7 +455,7 @@ ul {
 }
 
 ul {
-     padding-left: 0rem;
+    padding-left: 0rem;
 }
 
 @media screen and (max-width: 850px) {
@@ -518,7 +518,16 @@ ul {
         right: 100px;
     }
 
+    .row0 {
+        display: block;
+    }
+
+    .coverphoto {
+        display: none;
+    }
+
 }
+
 @media screen and (max-width: 754px) {
     .icona {
         margin: 0 15%;
@@ -563,6 +572,7 @@ ul {
         align-items: center;
 
     }
+
     .icona {
         margin: 0 15%;
     }
@@ -616,12 +626,16 @@ ul {
         width: calc(100%/1);
     }
 
-    .row{
+    .row {
         display: block;
     }
-    .coverphoto{
+
+    .coverphoto {
+        display: none;
+    }
+
+    .row0 {
         display: none;
     }
 
 }
-
