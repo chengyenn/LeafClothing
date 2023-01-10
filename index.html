@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaf2629 Cat-house</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/圓.png">
     <script src="https://kit.fontawesome.com/1a52dd44d7.js" crossorigin="anonymous"></script>
@@ -78,38 +79,63 @@
 </header>
 
 <body>
+    <div class="row">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/p1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/p2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/p3.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
     <img class="coverphoto" src="img/封面.png" alt="形象照">
     <div class="title">
         <p class="titlep">新品專區</p>
     </div>
     <div class="contentArea">
-        <ul class="gallery row">
-            <li class="gallery_item col" data-title="一起去跑步的朋朋＿坦克背心">
+        <ul class="gallery row1">
+            <li class="gallery_item col1" data-title="一起去跑步的朋朋＿坦克背心">
                 <a href="index2.html" class="gallery_item-link">
                     <img class="gallery_item-image" src="img/圖片 1.png">
                 </a>
             </li>
-            <li class="gallery_item col" data-title="熊一家人＿棉T">
+            <li class="gallery_item col1" data-title="熊一家人＿棉T">
                 <a href="#" class="gallery_item-link">
                     <img class="gallery_item-image" src="img/圖片 2.png">
                 </a>
             </li>
-            <li class="gallery_item col" data-title="垂墜西裝褲">
+            <li class="gallery_item col1" data-title="垂墜西裝褲">
                 <a href="#" class="gallery_item-link">
                     <img class="gallery_item-image" src="img/圖片 3.png">
                 </a>
             </li>
-            <li class="gallery_item1 col" data-title="春暖花開＿針織衫">
+            <li class="gallery_item1 col1" data-title="春暖花開＿針織衫">
                 <a href="#" class="gallery_item-link">
                     <img class="gallery_item-image" src="img/圖片 4.png">
                 </a>
             </li>
-            <li class="gallery_item1 col" data-title="慵懶午後＿棉麻感長洋">
+            <li class="gallery_item1 col1" data-title="慵懶午後＿棉麻感長洋">
                 <a href="#" class="gallery_item-link">
                     <img class="gallery_item-image" src="img/圖片 5.png">
                 </a>
             </li>
-            <li class="gallery_item1 col" data-title="穿了才知道你的好＿純棉圓領T">
+            <li class="gallery_item1 col1" data-title="穿了才知道你的好＿純棉圓領T">
                 <a href="#" class="gallery_item-link">
                     <img class="gallery_item-image" src="img/圖片 6.png">
                 </a>
@@ -146,7 +172,7 @@
     </footer>
 
     <!-- script -->
-
+    <script src="js/bootstrap.bundle.min.js"></script>
     <!--載入jQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--載入jQuery UI 1.11.4-->
@@ -161,26 +187,26 @@
                 // Get data attribute values
                 var title = $(this).parent('li').data('title');
                 if (!$(this).children("div").length) {
-                    $(this).append('<div class="overlay"></div>');
+                    $(this).append('<div class="overlay1"></div>');
                 }
 
                 // Get the overlay div
-                var overlay = $(this).children('.overlay');
+                var overlay1 = $(this).children('.overlay1');
 
                 // Add html to overlay
-                overlay.html('<h3>' + title + '</h3>');
+                overlay1.html('<h6>' + title + '</h6>');
 
                 // Fade in overlay
-                overlay.fadeIn(800);
+                overlay1.fadeIn(800);
             });
 
             // Mouseleave Overlay Effect
             $('.gallery_item-link').mouseleave(function () {
                 // Get the overlay div
-                var overlay = $(this).children('.overlay');
+                var overlay1 = $(this).children('.overlay1');
 
                 // Fade out overlay
-                overlay.fadeOut(500);
+                overlay1.fadeOut(500);
             });
 
             //漢堡選單
