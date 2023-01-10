@@ -851,7 +851,12 @@ table {
 .sizeguideContent {
     line-height: 30px;
 }
-
+.sizepic{
+    width: 40%;
+    height: auto;
+    margin-left: 30%;
+    margin-right: auto;
+}
 /* Grid Style */
 
 .row {
@@ -870,6 +875,11 @@ table {
     .sizehr0,
     .cardhr0 {
         width: 75%;
+    }
+    .sizepic{
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 10%;
     }
 }
 
@@ -894,6 +904,10 @@ table {
     .box,
     hr {
         width: 100%;
+    }
+    .sizepic{
+        width: 55%;
+        margin-left: 22%;
     }
 
 
@@ -932,6 +946,11 @@ table {
     .sizehr0,
     .cardhr0 {
         width: 95%;
+    }
+
+    .sizepic{
+        width: 70%;
+        margin-left: 15%;
     }
 
 }
@@ -981,6 +1000,20 @@ table {
     }
 
 }
+@media screen and (max-width: 600px) {
+    .sizepic{
+        width: 70%;
+        margin-left: 12%;
+    }
+
+}
+@media screen and (max-width: 550px) {
+    .sizepic{
+        width: 70%;
+        margin-left: 8%;
+    }
+
+}
 
 @media screen and (max-width: 480px) {
 
@@ -1004,6 +1037,16 @@ table {
     .descriptionp {
         line-height: 28px;
     }
+    .sizepic{
+        width: 70%;
+        margin-left: 2%;
+    }
 
 
+}
+@media screen and (min-width: 1215px) {
+    .sizepic{
+        width: 30%;
+        margin-left: 35%;
+    }
 }
