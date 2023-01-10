@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* nav */
 .navBar {
     display: flex;
     flex-direction: row;
@@ -107,10 +108,11 @@
         padding: 0;
         margin-right: 13%;
         margin-left: auto;
-        
+
     }
 
 }
+
 @media screen and (max-width: 450px) {
     .navIcon {
         display: flex;
@@ -120,7 +122,7 @@
         padding: 0;
         margin-right: 18%;
         margin-left: auto;
-       
+
     }
 
 }
@@ -253,21 +255,12 @@
 }
 
 
-
-
-
 @media screen and (max-width: 550px) {
 
     .nav__menu {
         display: block;
 
     }
-
-    /* .nav__menu:hover {
-        background-color: darkgray;
-        color: white;
-        cursor: pointer;
-    } */
 
     .navItem {
         display: none;
@@ -296,14 +289,6 @@
         display: none;
     }
 
-    /* .car {
-        margin: 0 1.5% 10% 20%;
-    }
-    
-    .member {
-        margin: 0 3% 0 1.5%;
-    } */
-
 }
 
 
@@ -322,12 +307,29 @@ ul {
 
 .card_login {
     width: 50%;
-    /* background-color: bisque; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-bottom: 150px;
+}
+
+@media screen and (max-width: 764px) {
+    .card_login {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .card_login {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card_login {
+        width: 100%;
+    }
 }
 
 .titlep,
@@ -518,6 +520,7 @@ ul {
         margin: 0 25%;
     }
 }
+
 @media screen and (max-width: 754px) {
     .icona {
         margin: 0 15%;
@@ -563,9 +566,6 @@ ul {
 
     }
 
-    .icona {
-        margin: 0 15%;
-    }
 
     .box2xs {
         display: block;

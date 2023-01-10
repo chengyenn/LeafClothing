@@ -731,12 +731,18 @@ hr {
 }
 
 .material,
-.description,
+.description {
+    width: 100%;
+    margin: auto;
+}
+
+
 .size,
 .sizeguide {
     width: 100%;
-    padding-bottom: 10%;
+    /* padding-bottom: 10%; */
     margin: auto;
+    height: 400px;
 }
 
 
