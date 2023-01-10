@@ -465,10 +465,11 @@
                     "goodsSize": $("#size").html(),
                     "goodsColor": chooseColor,
                     "goodsQuantity": $(".quantity_number").val()
-                });
-
-                // 導頁至購物車頁面
-                window.location.href = "./index7.html"
+                })
+                .then(function() {
+                    // 導頁至購物車頁面
+                    window.location.href = "./index7.html";
+                })
             })
 
             // color事件

@@ -229,23 +229,23 @@
                 messagingSenderId: "501590789422",
                 appId: "1:501590789422:web:0c6e94aaef920e7891bebf"
             });
-            // Reference Firebase Auth
-            const auth = firebase.auth();
 
             // 購物車連結          
             let db = firebase.firestore();
-            let shoppingCartRef = db.collection("shopping cart");
+            let shoppingCartRef = db.collection("shoppingCart");
             let userEmail;
             let chooseColor;
 
             // Listening Login User
-            auth.onAuthStateChanged(function (user) {
+            firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
                     console.log(user);
                     user.providerData.forEach(function (profile) {
                         $("#name").val(profile.displayName);
                         $("#email").val(profile.email);
                         userEmail = profile.email;
+                        // 呼叫監聽
+                        shoppingCartDetail(userEmail);
                     });
                     $(".memberLink").attr("href", "index6.html");
                 } else {
@@ -256,21 +256,54 @@
                 }
             });
 
+            let docRef;
+            let orderPrice;
+            let orderQuantity;
             // 監聽
-            let docRef = shoppingCartRef.doc(userEmail);
-            docRef.onSnapshot(
-                function (doc) {
-                    $(".goodTitle").html(doc.data().goodsTitle);
-                    $("#price").html(doc.data().goodsPrice);
-                    $("#goodSize").html(doc.data().goodsSize);
-                    $(".goodColor").html(doc.data().goodsColor);
-                    $(".quantity_number").val(doc.data().goodsQuantity);
-                    var orderPrice = parseInt(doc.data().goodsPrice);
-                    var orderQuantity = parseInt(doc.data().goodsQuantity);
-                    $("#subtotalp").html(orderPrice * orderQuantity);
-                    $("#totalp").html((orderPrice * orderQuantity) + 100);
-                }
-            );
+            function shoppingCartDetail(userEmail) {
+                docRef = shoppingCartRef.doc(userEmail);
+                docRef.onSnapshot(
+                    function (doc) {
+                        $(".goodTitle").html(doc.data().goodsTitle);
+                        $("#price").html(doc.data().goodsPrice);
+                        $("#goodSize").html(doc.data().goodsSize);
+                        $(".goodColor").html(doc.data().goodsColor);
+                        $(".quantity_number").val(doc.data().goodsQuantity);
+                        orderPrice = parseInt(doc.data().goodsPrice);
+                        orderQuantity = parseInt(doc.data().goodsQuantity);
+                        $("#subtotalp").html(orderPrice * orderQuantity);
+                        $("#totalp").html((orderPrice * orderQuantity) + 100);
+                    }
+                );
+            }
+
+            // 購物車數量的加減按鈕被改變時註冊的事件
+            $(".quantity_number").change(function() {
+                $("#subtotalp").html(orderPrice*$(".quantity_number").val());
+                databaseUpdate(userEmail);
+            })
+
+            $(".quantity_minus").click(function() {
+                $("#subtotalp").html(orderPrice*$(".quantity_number").val());
+                databaseUpdate(userEmail);
+            })
+
+            $(".quantity_plus").click(function() {
+                $("#subtotalp").html(orderPrice*$(".quantity_number").val());
+                databaseUpdate(userEmail);
+            })
+
+            // 更新資料庫
+            function databaseUpdate(userEmail) {
+                docRef.set({
+                    "goodsTitle": $(".goodTitle").html(),
+                    "goodsPrice": orderPrice,
+                    "goodsSize": $("#goodSize").html(),
+                    "goodsColor": $(".goodColor").html(),
+                    "goodsQuantity": $(".quantity_number").val()
+                })
+            }
+            
 
             //漢堡選單
             $(".nav_page").hide();
