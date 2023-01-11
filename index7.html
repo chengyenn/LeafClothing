@@ -46,14 +46,15 @@
         </ul>
         <div class="navIcon">
             <div class="car">
-                <a href=""><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+                <a href="index7.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
             </div>
             <div class="member">
                 <a class="memberLink" href="index3.html"><i class="fa-solid fa-circle-user fa-lg"></i></a>
             </div>
         </div>
     </nav>
-    <div class="nav_page"><!--遮罩-->
+    <div class="nav_page">
+        <!--遮罩-->
         <div class="navham menu-click overlay" id="toright">
             <!-- <a href="javascript:void(0)" id="closelay">&times;</a> -->
             <ul class="navHamItem">
@@ -139,7 +140,7 @@
             </div>
         </div>
         <div class="submit">
-            <button class="submitButton submitText">完成訂單</button>
+            <button id="submitOrder" class="submitButton submitText">完成訂單</button>
         </div>
     </div>
 
@@ -278,18 +279,18 @@
             }
 
             // 購物車數量的加減按鈕被改變時註冊的事件
-            $(".quantity_number").change(function() {
-                $("#subtotalp").html(orderPrice*$(".quantity_number").val());
+            $(".quantity_number").change(function () {
+                $("#subtotalp").html(orderPrice * $(".quantity_number").val());
                 databaseUpdate(userEmail);
             })
 
-            $(".quantity_minus").click(function() {
-                $("#subtotalp").html(orderPrice*$(".quantity_number").val());
+            $(".quantity_minus").click(function () {
+                $("#subtotalp").html(orderPrice * $(".quantity_number").val());
                 databaseUpdate(userEmail);
             })
 
-            $(".quantity_plus").click(function() {
-                $("#subtotalp").html(orderPrice*$(".quantity_number").val());
+            $(".quantity_plus").click(function () {
+                $("#subtotalp").html(orderPrice * $(".quantity_number").val());
                 databaseUpdate(userEmail);
             })
 
@@ -303,7 +304,27 @@
                     "goodsQuantity": $(".quantity_number").val()
                 })
             }
-            
+
+            // insert order to firebase(訂單資訊)
+            let orderRef = db.collection("order");
+            $("#submitOrder").click(function () {
+                orderRef.doc(userEmail).set({
+                    "orderEmail": userEmail,
+                    "orderName": $("#name").val(),
+                    "orderPhone": $("#phone").val(),
+                    "orderAddress": $("#address").val(),
+                    "orderPrice": orderPrice,
+                    "orderTitle": $(".goodTitle").html(),
+                    "quantity": $(".quantity_number").val(),
+                    "orderTotalPrice": $("#totalp").html(),
+                    "orderDate": new Date()
+                })
+                .then(function() {
+                    alert("訂單已送出！");
+                    window.location.href = "./index.html";
+                })
+            })
+
 
             //漢堡選單
             $(".nav_page").hide();
@@ -313,10 +334,12 @@
 
             $($menu).click(function () {
                 $(".nav_page").toggle();
-                $(".nav_page").css({ "background-color": "rgba(0, 0, 0, 0.3);" });
+                $(".nav_page").css({
+                    "background-color": "rgba(0, 0, 0, 0.3);"
+                });
                 $ul.toggle("menu-click");
             })
-            
+
         });
         let btn = document.getElementById("menu__button");
         btn.addEventListener("click", openlay, false);
@@ -331,7 +354,6 @@
         function closelay() {
             document.getElementById("toright").style.width = "0%";
         }
-
     </script>
 </body>
 
