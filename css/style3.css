@@ -360,6 +360,12 @@ ul {
     margin: 20px 0 50px 0;
 }
 
+@media screen and (max-width: 480px) {
+    .titlep {
+        font-size: 26px;
+    }
+}
+
 .titlepassward {
     margin: 20px 0 20px 0;
 }
