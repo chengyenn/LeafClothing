@@ -78,14 +78,6 @@
         margin-right: 4%;
     }
 
-    .nav-sublist {
-        position: absolute;
-        background-color: #83978E;
-        padding: 0;
-        width: 150px;
-        display: none;
-        right: 104px;
-    }
 
     .car {
         margin: 0 3% 0 2%;
@@ -158,7 +150,8 @@
     padding: 0;
     width: 150px;
     display: none;
-    right: 140px;
+    right: 8.5%;
+    z-index: 200;
 }
 
 .navLink1:hover .nav-sublist {
@@ -174,14 +167,35 @@
 .nava1:hover {
     color: #2D4263;
 }
+@media screen and (max-width: 1230px) {
+    .nav-sublist {
+        right: 8%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .nav-sublist {
+        right: 7%;
+    }
+}
 
+@media screen and (max-width: 850px) {
+    .nav-sublist {
+        right: 12%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .nav-sublist {
+        right: 13%;
+    }
+}
 @media screen and (max-width: 550px) {
     .nav-sublist {
         position: absolute;
         padding: 0;
         width: 100%;
         display: none;
-        margin-right: -75px;
+        margin-right: auto;
     }
 
     .navLink2 {
@@ -191,7 +205,7 @@
         border-bottom: 1px solid #90a29a;
         width: 80%;
         height: 45px;
-        margin-left: 80px;
+        margin-left: auto;
 
     }
 }
