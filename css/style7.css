@@ -77,15 +77,6 @@
         margin-right: 4%;
     }
 
-    .nav-sublist {
-        position: absolute;
-        background-color: #83978E;
-        padding: 0;
-        width: 150px;
-        display: none;
-        right: 104px;
-    }
-
     .car {
         margin: 0 3% 0 2%;
     }
@@ -158,7 +149,8 @@
     padding: 0;
     width: 150px;
     display: none;
-    right: 140px;
+    right: 8.5%;
+    z-index: 200;
 }
 
 .navLink1:hover .nav-sublist {
@@ -174,14 +166,35 @@
 .nava1:hover {
     color: #2D4263;
 }
+@media screen and (max-width: 1230px) {
+    .nav-sublist {
+        right: 8%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .nav-sublist {
+        right: 7%;
+    }
+}
 
+@media screen and (max-width: 850px) {
+    .nav-sublist {
+        right: 12%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .nav-sublist {
+        right: 13%;
+    }
+}
 @media screen and (max-width: 550px) {
     .nav-sublist {
         position: absolute;
         padding: 0;
         width: 100%;
         display: none;
-        margin-right: -75px;
+        margin-right: auto;
     }
 
     .navLink2 {
@@ -191,7 +204,7 @@
         border-bottom: 1px solid #90a29a;
         width: 80%;
         height: 45px;
-        margin-left: 80px;
+        margin-left: auto;
 
     }
 }
@@ -337,6 +350,11 @@ ul {
     margin: 1% 0 2% 0;
 }
 
+.cardhr1 {
+    border: 0.5px solid #83978E;
+    margin: 1% 0 2% 0;
+}
+
 .orderGoods {
     display: flex;
     align-items: center;
@@ -429,6 +447,7 @@ ul {
 .customerInfo {
     display: flex;
     margin: 2% 3%;
+
 }
 
 .basicInfo,
@@ -458,6 +477,142 @@ ul {
     outline-color: #48685A;
 }
 
+@media screen and (max-width: 1235px) {
+
+    .infoInput,
+    .infoSelect {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+
+    .infoInput,
+    .infoSelect {
+        width: 60%;
+    }
+
+    .order,
+    .customer {
+        width: 90%;
+    }
+
+    .submit {
+        width: 90%;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .infoInput,
+    .infoSelect {
+        width: 65%;
+    }
+
+    .customerInfo {
+        display: flex;
+        margin: 2% 1%;
+
+    }
+
+    ::placeholder {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+
+    .infoInput,
+    .infoSelect {
+        width: 70%;
+    }
+
+    .infop {
+        font-size: 16px;
+        padding: 0 2%;
+    }
+}
+
+@media screen and (max-width: 684px) {
+    .titlep {
+
+        font-size: 28px;
+    }
+
+    .customerInfo {
+        display: flex;
+        flex-direction: column;
+        margin: 2% 3%;
+
+    }
+
+    .goodTitle {
+        font-size: 20px;
+    }
+
+    .basicInfo,
+    .orderInfo {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .infoInput,
+    .infoSelect {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 506px) {
+    .titlep {
+
+        font-size: 24px;
+    }
+
+    .orderGoods {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2% 3%;
+    }
+
+    .goodInfo {
+        margin-top: 5%;
+    }
+
+    .orderCost {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        /* background-color: aqua; */
+        margin: auto;
+    }
+
+    .cardhr {
+        margin: 3% 0 5% 0;
+    }
+
+    .cardhr1 {
+        width: 70%;
+        margin-top: 3%;
+        margin-bottom: 2%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .infoInput,
+    .infoSelect {
+        width: 70%;
+    }
+
+
+}
+
+
+
+
 .submit {
     width: 80%;
     margin-top: 50px;
@@ -486,6 +641,34 @@ ul {
     border: 2px solid;
     border-top: #000000;
     border-left: #000000;
+}
+
+@media screen and (max-width: 400px) {
+    .infop {
+        font-size: 14px;
+        padding: 0 3%;
+    }
+
+    .customerInfo {
+        margin: 5% 2%;
+
+    }
+
+    .orderCost {
+        width: 80%;
+    }
+
+    .cardhr1 {
+        width: 80%;
+    }
+
+    .submit {
+        margin-top: 30px;
+    }
+
+    .submitButton {
+        height: 35px;
+    }
 }
 
 /* footer */
