@@ -308,7 +308,9 @@
             // insert order to firebase(訂單資訊)
             let orderRef = db.collection("order");
             $("#submitOrder").click(function () {
-                orderRef.doc(userEmail).set({
+                userRef = orderRef.doc("orders");
+                userDoc = userRef.collection(userEmail);
+                userDoc.add({
                     "orderEmail": userEmail,
                     "orderName": $("#name").val(),
                     "orderPhone": $("#phone").val(),
